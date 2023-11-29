@@ -1,0 +1,4135 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    169812,       4126]
+NotebookOptionsPosition[    160497,       3878]
+NotebookOutlinePosition[    160854,       3894]
+CellTagsIndexPosition[    160811,       3891]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "myFunctionsMathematica8.m"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.661738307123271*^9, 3.66173830974631*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "Temporary", "}"}]], "Output",
+ CellChangeTimes->{
+  3.66899536755418*^9, 3.668996192043255*^9, 3.6689963619389763`*^9, 
+   3.668996398223215*^9, 3.668996967075602*^9, 3.669034461019232*^9, 
+   3.669037832874301*^9, 3.6690386630274067`*^9, 3.669040805069137*^9, 
+   3.6690412825286827`*^9, 3.669042133366543*^9, 3.669121455142501*^9, 
+   3.6691292229465313`*^9, 3.669130977563936*^9, 3.669134309983693*^9, 
+   3.669154261682804*^9, 3.669161233395976*^9, 3.6691688929735327`*^9, 
+   3.669168946750003*^9, 3.6692066013064957`*^9, 3.66922277549046*^9, 
+   3.669224675051258*^9, 3.669226902821293*^9, 3.669293187619104*^9, 
+   3.6693267493625517`*^9, 3.6693785768093853`*^9, 3.6693788748906107`*^9, 
+   3.6693818941619453`*^9, 3.669382704029765*^9, 3.6693835368266582`*^9, 
+   3.6693875085715446`*^9, 3.669469606976338*^9, 3.6694748303227377`*^9, 
+   3.6694953408288593`*^9, 3.6694994818331347`*^9, 3.669928682547661*^9, 
+   3.669979571806229*^9, {3.669990171857638*^9, 3.6699901769206657`*^9}, 
+   3.67003255332288*^9, 3.670069193934265*^9, 3.671888311400613*^9, 
+   3.672146110238206*^9, 3.672202301249715*^9, 3.672245120294886*^9, 
+   3.672324218796719*^9, 3.672355018182097*^9, 3.672405032221504*^9, 
+   3.672405258061096*^9, 3.67252121632159*^9, 3.672521772294257*^9, 
+   3.672525614690884*^9, 3.672525646836491*^9, 3.672613651614607*^9, 
+   3.672613684043112*^9, 3.672659104398343*^9, 3.6726955644277*^9, 
+   3.6726960965726967`*^9, 3.673129868558979*^9, 3.673135650509956*^9, 
+   3.6731427363505774`*^9, 3.673271743183566*^9, 3.673362716133391*^9, 
+   3.673713140217225*^9, 3.673769248172155*^9, 3.6737716215565233`*^9, 
+   3.6738107251958113`*^9, 3.673810892339319*^9, 3.67382157375067*^9, 
+   3.6738701865300837`*^9, 3.673870927939479*^9, 3.6738719506278267`*^9, 
+   3.6739145039026623`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"zetaIterate", "[", 
+    RowBox[{"s_", ",", "iteratenumber_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"kk", ",", "w"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"w", "=", "s"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"kk", "=", "0"}], ",", 
+        RowBox[{"kk", "<", "iteratenumber"}], ",", 
+        RowBox[{
+         RowBox[{"kk", "++"}], ";", 
+         RowBox[{"w", "=", 
+          RowBox[{"Zeta", "[", "w", "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Abs", "[", "w", "]"}], ">", 
+            RowBox[{"10", "^", "10"}]}], ",", 
+           RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "w", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Attributes", "[", "zetaIterate", "]"}], "=", 
+  "Listable"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.650806267087908*^9, 3.6508063288923483`*^9}, {
+  3.650807845299712*^9, 3.650807880504162*^9}}],
+
+Cell[BoxData["Listable"], "Output",
+ CellChangeTimes->{
+  3.668868648464513*^9, 3.668986923148947*^9, 3.668987606307764*^9, 
+   3.6689879934062634`*^9, 3.668988328994475*^9, 3.668994712081998*^9, 
+   3.6689950810909348`*^9, 3.668995367703442*^9, 3.66899619216755*^9, 
+   3.668996362081551*^9, 3.668996398336478*^9, 3.668996967178164*^9, 
+   3.6690344611601048`*^9, 3.6690378330067368`*^9, 3.669038663178115*^9, 
+   3.669040805202372*^9, 3.669041282677367*^9, 3.6690421335078363`*^9, 
+   3.669121455260324*^9, 3.669129223064427*^9, 3.669130977682041*^9, 
+   3.669154261806014*^9, 3.6691612335287457`*^9, 3.6691688930941887`*^9, 
+   3.669168946831523*^9, 3.669206601440444*^9, 3.669222775621461*^9, 
+   3.6692246751829147`*^9, 3.669226902937263*^9, 3.669293187751601*^9, 
+   3.669326749504468*^9, 3.669378576931439*^9, 3.669378875014954*^9, 
+   3.669381894265806*^9, 3.669382704107016*^9, 3.6693835369066343`*^9, 
+   3.669387508716447*^9, 3.669469607076294*^9, 3.6694748304101067`*^9, 
+   3.669495340975018*^9, 3.6694994819069033`*^9, 3.669928682632659*^9, 
+   3.669979571890821*^9, {3.669990171958012*^9, 3.669990176969084*^9}, 
+   3.670032553426034*^9, 3.67006919403222*^9, 3.6718883114882917`*^9, 
+   3.6721461103475924`*^9, 3.6722023013454647`*^9, 3.672245120407814*^9, 
+   3.672324218944007*^9, 3.672355018304434*^9, 3.672405032371018*^9, 
+   3.672405258144711*^9, 3.672521216479206*^9, 3.6725217724212227`*^9, 
+   3.672525614753779*^9, 3.6725256468893547`*^9, 3.672613651717214*^9, 
+   3.672613684135003*^9, 3.672659104522133*^9, 3.672695564522873*^9, 
+   3.672696096687986*^9, 3.673129868656231*^9, 3.673135650560089*^9, 
+   3.673142736448135*^9, 3.6732717432917233`*^9, 3.6733627162672358`*^9, 
+   3.673713140285429*^9, 3.673769248289673*^9, 3.673771621612679*^9, 
+   3.673810725261978*^9, 3.6738108923719873`*^9, 3.673821573806723*^9, 
+   3.673870186594352*^9, 3.673870928055037*^9, 3.673871950681613*^9, 
+   3.6739145040096817`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"start", "=", 
+     RowBox[{"SessionTime", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"streamzeros", "=", 
+     RowBox[{"OpenRead", "[", "\"\<barryzerosprecision1000no8\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"betterbarryzeroslist", "=", 
+     RowBox[{"ReadList", "[", "streamzeros", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamzeros", "]"}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"streamfx", "=", 
+     RowBox[{"OpenRead", "[", "\"\<realfxptsprecision1000no1\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fxlist", "=", 
+     RowBox[{"ReadList", "[", "streamfx", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamfx", "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"stream1", "=", 
+     RowBox[{"OpenWrite", "[", "\"\<realfxNrhoNrun1jun16no11\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"precision", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "0"}], ",", 
+      RowBox[{"n", "<", "20"}], ",", 
+      RowBox[{
+       RowBox[{"n", "++"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"shortorbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"data", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"thetaset", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"errorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"relerrorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"targetzero", "=", 
+        RowBox[{
+         RowBox[{"1", "/", "2"}], "+", 
+         RowBox[{"I", "*", 
+          RowBox[{"betterbarryzeroslist", "[", 
+           RowBox[{"[", 
+            RowBox[{"n", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fx", "=", 
+        RowBox[{"fxlist", "[", 
+         RowBox[{"[", 
+          RowBox[{"n", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", 
+        "\"\<&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<n  \>\"", ",", "n"}], "]"}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<fixed point ~ \>\"", ",", 
+         RowBox[{"N", "[", 
+          RowBox[{"Round", "[", 
+           RowBox[{"fx", ",", 
+            RowBox[{"1", "/", 
+             RowBox[{"10", "^", "10"}]}]}], "]"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"k", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"zr", "=", "targetzero"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Write", "[", 
+        RowBox[{"stream1", ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"arg", "=", 
+        RowBox[{"Arg", "[", 
+         RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"args", ",", "arg"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"la", "=", 
+        RowBox[{"Re", "[", 
+         RowBox[{"Log", "[", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpair", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"la", "*", 
+           RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+          RowBox[{"la", "*", 
+           RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"k", "=", "1"}], ",", 
+          RowBox[{"k", "<", "20"}], ",", 
+          RowBox[{
+           RowBox[{"k", "++"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"startcenter", "=", "fx"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"x", "=", 
+            RowBox[{"orbit", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", "-", "1"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"zr", "=", 
+            RowBox[{
+             RowBox[{"FindRoot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"zetaIterate", "[", 
+                 RowBox[{"s", ",", "1"}], "]"}], "-", "x"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"s", ",", "startcenter"}], "}"}], ",", 
+               RowBox[{"PrecisionGoal", "\[Rule]", 
+                RowBox[{"precision", "+", "50"}]}], ",", 
+               RowBox[{"WorkingPrecision", "->", 
+                RowBox[{"precision", "+", "100"}]}]}], "]"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Write", "[", 
+            RowBox[{"stream1", ",", 
+             RowBox[{"{", 
+              RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"shortorbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"shortorbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"arg", "=", 
+            RowBox[{"Arg", "[", 
+             RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"While", "[", 
+            RowBox[{
+             RowBox[{"Not", "[", 
+              RowBox[{
+               RowBox[{"arg", "-", 
+                RowBox[{"Last", "[", "args", "]"}]}], ">", "1"}], "]"}], ",", 
+             
+             RowBox[{"arg", "=", 
+              RowBox[{"arg", "+", 
+               RowBox[{"2", "*", "Pi"}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"args", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"args", ",", "arg"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"la", "=", 
+            RowBox[{"Re", "[", 
+             RowBox[{"Log", "[", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpair", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"la", "*", 
+               RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+              RowBox[{"la", "*", 
+               RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpairs", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}]}]}], 
+         "\[IndentingNewLine]", "]"}], 
+        RowBox[{"(*", 
+         RowBox[{"close", " ", "k", " ", "loop"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"PlotStyle", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Red", ",", 
+                RowBox[{"PointSize", "[", ".011", "]"}]}], "}"}]}]}], "]"}], 
+           ",", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}], "]"}], 
+         "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";"}], 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"close", " ", "n"}], "-", "loop"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "stream1", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<elasped seconds   \>\"", ",", 
+     RowBox[{
+      RowBox[{"SessionTime", "[", "]"}], "-", "start"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{
+  3.672574497315132*^9, 3.6738111637744923`*^9, {3.673812152541301*^9, 
+   3.673812165867248*^9}, {3.673812286976053*^9, 3.673812294710019*^9}, {
+   3.6738137874257917`*^9, 3.673813806085183*^9}, {3.673813902643778*^9, 
+   3.6738139136803923`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673813971822339*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["n  ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673813971822817*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "20.131186308`"}]}],
+  SequenceForm["fixed point ~ ", -20.131186308],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673813971823656*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAzhUbfO8+BUCNUQ1Xlhz9P7dmutq3
+Kfa/SChTM0YR879nhMVZUzEVwDMsyUcQQRLA2FU6UbZsIsCmUEvFdr0fwFqH
+U0vFQCrAnTwtsOycJsC9dXslagoxwObNZfgdWy3A3sFSpXH0NMCxgEmgpwwy
+wHUYKiV53jjAfw9gRMBrNcAebwGlgMg8wDiedujYyjjA42JsEkRZQMDxLI2M
+8Sk8wDgOWNJHTkLAq7ujMAqJP8CMuUOSS0NEwDIlXWoRdEHA4WQvUk84RsCP
+bGi8nSNDwDUQGxJTLUjA67NzDirTRMCKuwbSViJKwEj7fmC2gkbA3mbykVoX
+TMCkQoqyQjJIwDMS3lFeDE7AAYqVBM/hScDE3uQIsQBQwF7RoFZbkUvAbrTa
+6DL7UMC6GKyo50BNwBiK0Mi09VHAF2C3+nPwTsD6+pjS
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAzhUbfO8+BUCNUQ1Xlhz9P7dmutq3
+Kfa/SChTM0YR879nhMVZUzEVwDMsyUcQQRLA2FU6UbZsIsCmUEvFdr0fwFqH
+U0vFQCrAnTwtsOycJsC9dXslagoxwObNZfgdWy3A3sFSpXH0NMCxgEmgpwwy
+wHUYKiV53jjAfw9gRMBrNcAebwGlgMg8wDiedujYyjjA42JsEkRZQMDxLI2M
+8Sk8wDgOWNJHTkLAq7ujMAqJP8CMuUOSS0NEwDIlXWoRdEHA4WQvUk84RsCP
+bGi8nSNDwDUQGxJTLUjA67NzDirTRMCKuwbSViJKwEj7fmC2gkbA3mbykVoX
+TMCkQoqyQjJIwDMS3lFeDE7AAYqVBM/hScDE3uQIsQBQwF7RoFZbkUvAbrTa
+6DL7UMC6GKyo50BNwBiK0Mi09VHAF2C3+nPwTsD6+pjS
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-71.8391592060583, 2.6557302184835185`}, {-61.878539409197565`,
+    1.8194793129415274`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{1.4898977884908362`, 1.4898977884908362`}, {
+   1.2739603744427819`, 1.2739603744427819`}}]], "Print",
+ CellChangeTimes->{3.673814503813497*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673814503817843*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm["n  ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67381450381845*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "21.9855319957`"}]}],
+  SequenceForm["fixed point ~ ", -21.9855319957],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673814503819017*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAjhk/N8EGBECj6Qg0E7kCQPozk51S
+KQdAogEm27PnBEDGwno/qqMgwMjD08eUCR7AaDMgMwV9K0AtsFJ0pM8oQNSl
+RRIwKzPAHCRhQz9NMcCnf/uK3Zc4QMGjmEysMjZAaFmxA4sEPsB6I9BVGRg7
+wJSZMz6cuEFAMqMHX4b9P0B0ho768m5EwHWRH7R5cULAVXPptkklR0BRUbs4
+MOREQDVgRHOg20nALRFXveZWR8AVTZ8v95FMQAnR8kGdyUlA9jn6601IT8Dl
+kI7GUzxMwGuTKlRS/1BAwVAqSwqvTkDbCViyfVpSwE8I42fgkFDAS4CFEKm1
+U0A96DCqO8pRQLz2sm7UEFXAK8h+7JYDU8AsbeDM/2tWQBmozC7yPFRAnOMN
+KyvHV8AHiBpxTXZVwAxaO4lWIllA9Wdos6ivVkAG1o/+
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAjhk/N8EGBECj6Qg0E7kCQPozk51S
+KQdAogEm27PnBEDGwno/qqMgwMjD08eUCR7AaDMgMwV9K0AtsFJ0pM8oQNSl
+RRIwKzPAHCRhQz9NMcCnf/uK3Zc4QMGjmEysMjZAaFmxA4sEPsB6I9BVGRg7
+wJSZMz6cuEFAMqMHX4b9P0B0ho768m5EwHWRH7R5cULAVXPptkklR0BRUbs4
+MOREQDVgRHOg20nALRFXveZWR8AVTZ8v95FMQAnR8kGdyUlA9jn6601IT8Dl
+kI7GUzxMwGuTKlRS/1BAwVAqSwqvTkDbCViyfVpSwE8I42fgkFDAS4CFEKm1
+U0A96DCqO8pRQLz2sm7UEFXAK8h+7JYDU8AsbeDM/2tWQBmozC7yPFRAnOMN
+KyvHV8AHiBpxTXZVwAxaO4lWIllA9Wdos6ivVkAG1o/+
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-95.11200977665288, 100.53653174205846`}, {-85.84847667303994, 
+   90.7446716804114}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{3.9129708303742268`, 3.9129708303742268`}, {
+   3.531862967069027, 3.531862967069027}}]], "Print",
+ CellChangeTimes->{3.673814982805912*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673814982808694*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "3"}],
+  SequenceForm["n  ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673814982809206*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "24.0011071801`"}]}],
+  SequenceForm["fixed point ~ ", -24.0011071801],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673814982809684*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAIMlgNunnA0CRfHez7lEEQK0Bp1oK
+9xHAy/SRTYBlEsC09tuIhe8mwC0JisOLfCfAmDCa+MJxMsDC7YurK+MywFaT
+xizDaznAfq9SdREIOsALe3mw4TJAwJ24jJ97lkDAaqyPyuGvQ8B6GXCE7ihE
+wMrdpeThLEfAWHpTaWG7R8ApD7z+4alKwDbbNk7UTUvAiUDSGOImTsATPBoz
+R+BOwPQ4dBnx0VDAeM7+C105UcCkUX8mcZBSwOd+cH6WAlPAVGqKM/FOVMBW
+L+Lwz8tUwASDlUBxDVbAxd9TYwmVVsCzm6BN8ctXwDSQxdVCXljAY7SrWnGK
+WcCjQDdIfCdawBPNtmfxSFvAEvGourXwW8DD5cF0cQddwIChGi3vuV3Acv7M
+gfHFXsDvUYyfKINfwJELbMc4QmDALwH/CDGmYMDFk6XW
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAIMlgNunnA0CRfHez7lEEQK0Bp1oK
+9xHAy/SRTYBlEsC09tuIhe8mwC0JisOLfCfAmDCa+MJxMsDC7YurK+MywFaT
+xizDaznAfq9SdREIOsALe3mw4TJAwJ24jJ97lkDAaqyPyuGvQ8B6GXCE7ihE
+wMrdpeThLEfAWHpTaWG7R8ApD7z+4alKwDbbNk7UTUvAiUDSGOImTsATPBoz
+R+BOwPQ4dBnx0VDAeM7+C105UcCkUX8mcZBSwOd+cH6WAlPAVGqKM/FOVMBW
+L+Lwz8tUwASDlUBxDVbAxd9TYwmVVsCzm6BN8ctXwDSQxdVCXljAY7SrWnGK
+WcCjQDdIfCdawBPNtmfxSFvAEvGourXwW8DD5cF0cQddwIChGi3vuV3Acv7M
+gfHFXsDvUYyfKINfwJELbMc4QmDALwH/CDGmYMDFk6XW
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-130.06943102934432`, 
+   2.4882377861296305`}, {-133.1934857349929, 2.5400060673560536`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{2.6511533763094794`, 2.6511533763094794`}, {
+   2.714669836046979, 2.714669836046979}}]], "Print",
+ CellChangeTimes->{3.673815418196191*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673815418200123*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "4"}],
+  SequenceForm["n  ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673815418200645*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "25.9999270366`"}]}],
+  SequenceForm["fixed point ~ ", -25.9999270366],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673815418201125*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAJKaEepZtA0BFKpz8O04GQJNeEVPI
+3xdA2mLOpURnG0AFzd2hUbsswIIw/fhQfTDAeXQkjV/DNkDy6X7I0CA6QGoC
+WkkWKT/As1EATCjiQcAuyMeCZsdDQG0uwTPos0ZAJ4/i4EH6R8AnC4IbqIVL
+wB9W/T4dLUxA8XOhAbQrUECMDoxO/C9QwE7igfWTlFLACHKZ/WlJUkCrUGLp
+c/1UQIXVpqzXYlTACL9C3VNmV8ABObRbRXxWQGUtI9Ezz1lAfZzBCrOVWMDC
+mwPFEzhcwPr/zrkgr1pAHwrkuPOgXkB2Y9xojshcwD48YtbphGDA8sbpF/zh
+XkBsc1LQWblhQDeVe+O0fWDAm6pCysntYsD2RgK7a4phQMnhMsQ5ImRAtPiI
+kiKXYsD4GCO+qVZlwHKqD2rZo2NAJlATuBmLZkB825rl
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAJKaEepZtA0BFKpz8O04GQJNeEVPI
+3xdA2mLOpURnG0AFzd2hUbsswIIw/fhQfTDAeXQkjV/DNkDy6X7I0CA6QGoC
+WkkWKT/As1EATCjiQcAuyMeCZsdDQG0uwTPos0ZAJ4/i4EH6R8AnC4IbqIVL
+wB9W/T4dLUxA8XOhAbQrUECMDoxO/C9QwE7igfWTlFLACHKZ/WlJUkCrUGLp
+c/1UQIXVpqzXYlTACL9C3VNmV8ABObRbRXxWQGUtI9Ezz1lAfZzBCrOVWMDC
+mwPFEzhcwPr/zrkgr1pAHwrkuPOgXkB2Y9xojshcwD48YtbphGDA8sbpF/zh
+XkBsc1LQWblhQDeVe+O0fWDAm6pCysntYsD2RgK7a4phQMnhMsQ5ImRAtPiI
+kiKXYsD4GCO+qVZlwHKqD2rZo2NAJlATuBmLZkB825rl
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-148.7229702639794, 157.1202898317311}, {-170.7082205472468, 
+   180.34688953182302`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{6.11686520191421, 6.11686520191421}, {7.021102201581397,
+    7.021102201581397}}]], "Print",
+ CellChangeTimes->{3.673815816500379*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6738158165043287`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "5"}],
+  SequenceForm["n  ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673815816504849*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "28.0000041028`"}]}],
+  SequenceForm["fixed point ~ ", -28.0000041028],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67381581650533*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAHg1vX6LBA0BMSmDortQGQCdvmIE8
+Tx/AHkn2ClYXIsAhvqh00R8ywBH3dGbt8TTAxmvryNNrPMCSYLfjF2xAwLUM
+lw7rW0PAm0U0FDlfRsCHY7g47IFIwKUqsURaUkzAWrrZYu2nTcDXB5e6vSJR
+wJaIfUb3ZlHAXHrVUk4cVMD/M47b9/lTwOHsE+veFVfAaN+ecPiMVsBlX1KD
+bw9awNGKrwX5H1nA6tGQGwAJXcA6NsCa+bJbwDei51lIAWDApOHQL/pFXsB6
+2wamEH5hwIbGcGJ9bGDAvBQm8tj6YsA7HPms/bVhwP9NRT6hd2TA73GB933/
+YsBBh2SKafRlwKTHCUL+SGTAg8CD1jFxZ8BZHZKMfpJlwMb5oiL67WjADXMa
+1/7bZsAIM8JuwmpqwMLIoiF/JWjASmzhuorna8CEtqhR
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAHg1vX6LBA0BMSmDortQGQCdvmIE8
+Tx/AHkn2ClYXIsAhvqh00R8ywBH3dGbt8TTAxmvryNNrPMCSYLfjF2xAwLUM
+lw7rW0PAm0U0FDlfRsCHY7g47IFIwKUqsURaUkzAWrrZYu2nTcDXB5e6vSJR
+wJaIfUb3ZlHAXHrVUk4cVMD/M47b9/lTwOHsE+veFVfAaN+ecPiMVsBlX1KD
+bw9awNGKrwX5H1nA6tGQGwAJXcA6NsCa+bJbwDei51lIAWDApOHQL/pFXsB6
+2wamEH5hwIbGcGJ9bGDAvBQm8tj6YsA7HPms/bVhwP9NRT6hd2TA73GB933/
+YsBBh2SKafRlwKTHCUL+SGTAg8CD1jFxZ8BZHZKMfpJlwMb5oiL67WjADXMa
+1/7bZsAIM8JuwmpqwMLIoiF/JWjASmzhuorna8CEtqhR
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-193.17176896852294`, 
+   2.4695479827656888`}, {-223.2356848147195, 2.853849234999222}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{3.9128263390257723`, 3.9128263390257723`}, {
+   4.521790680994374, 4.521790680994374}}]], "Print",
+ CellChangeTimes->{3.673816190848836*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673816190851815*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "6"}],
+  SequenceForm["n  ", 6],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673816190852338*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "29.9999998005`"}]}],
+  SequenceForm["fixed point ~ ", -29.9999998005],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738161908528223`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA43exKHmOA0AX8QZVpRkIQGr20una
+1iJAYYoRuVw3J0D6w3ofqkg1wHxHVE+ROjrAZAYGZfOSQEDh5A8humxEQMqq
+TrqRgUbABKZ1miu8S8AxT5cPMHBMQJOz7YnOhVFAzPlvMmcvUcAllKBGhy1V
+wP9LFF22JlRAtnRTA0DVWEAznriHBR5XwEdVBsD4fFzAZvBcslQVWkDsmly+
+WBJgQJlCAd2jDF3ANQu2HDXmYcBmytKD+QFgQH57D3sRumNAgPMkGaF9YcDG
+62jZ7Y1lwJocd65I+WJAD1zCN8phZ0CzRclD8HRkwFjMG5amNWnAzW4b2Zfw
+ZUCgPHX0gglrQOeXbW4/bGfA6azOUl/dbMABwb8D5+doQDIdKLE7sW5AGuoR
+mY5jasC9xsAHjEJwwDQTZC4232tA4n7tNnoscUBe5ZXK
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA43exKHmOA0AX8QZVpRkIQGr20una
+1iJAYYoRuVw3J0D6w3ofqkg1wHxHVE+ROjrAZAYGZfOSQEDh5A8humxEQMqq
+TrqRgUbABKZ1miu8S8AxT5cPMHBMQJOz7YnOhVFAzPlvMmcvUcAllKBGhy1V
+wP9LFF22JlRAtnRTA0DVWEAznriHBR5XwEdVBsD4fFzAZvBcslQVWkDsmly+
+WBJgQJlCAd2jDF3ANQu2HDXmYcBmytKD+QFgQH57D3sRumNAgPMkGaF9YcDG
+62jZ7Y1lwJocd65I+WJAD1zCN8phZ0CzRclD8HRkwFjMG5amNWnAzW4b2Zfw
+ZUCgPHX0gglrQOeXbW4/bGfA6azOUl/dbMABwb8D5+doQDIdKLE7sW5AGuoR
+mY5jasC9xsAHjEJwwDQTZC4232tA4n7tNnoscUBe5ZXK
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-211.11115697382849`, 222.9753639177885}, {-260.159187081368, 
+   274.7798375394033}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{8.68173041783234, 8.68173041783234}, {
+   10.698780492415427`, 10.698780492415427`}}]], "Print",
+ CellChangeTimes->{3.673816542888742*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673816542891913*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "7"}],
+  SequenceForm["n  ", 7],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673816542892433*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "32.0000000085`"}]}],
+  SequenceForm["fixed point ~ ", -32.0000000085],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673816542892915*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAmuF0SiOvA0Dj6EGsdsgIQMNRghem
+gibA4+SHKGRXLMDD7AmAivg4wHC2+/5ycD/AU1gp+uBXQ8A3vdn0mVpIwES6
+TbR8M0rAm88aNX1+UMAaDjk3jIdQwJvAyG+tz1TAEz9LFFr1U8CbsXaq3SBZ
+wAtwXfEnY1fAmqIk5Q1yXcAEoW/O9dBawM1J6Q+f4WDA/dGBq8M+XsBNQkAt
+NwpjwHsBSsRI1mDAzTqXSs8yZcD3GdOyL41iwEwz7mdnW2fAczJcoRZEZMDM
+K0WF/4NpwO9K5Y/9+mXATCScopesa8BsY25+5LFnwMwc878v1W3A6Hv3bMto
+acBMFUrdx/1vwGSUgFuyH2vA5oZQ/S8TccDgrAlKmdZswCYD/At8J3LAXcWS
+OICNbsBmf6cayDtzwOzujZMzInDApftSKRRQdMAGvabC
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAmuF0SiOvA0Dj6EGsdsgIQMNRghem
+gibA4+SHKGRXLMDD7AmAivg4wHC2+/5ycD/AU1gp+uBXQ8A3vdn0mVpIwES6
+TbR8M0rAm88aNX1+UMAaDjk3jIdQwJvAyG+tz1TAEz9LFFr1U8CbsXaq3SBZ
+wAtwXfEnY1fAmqIk5Q1yXcAEoW/O9dBawM1J6Q+f4WDA/dGBq8M+XsBNQkAt
+NwpjwHsBSsRI1mDAzTqXSs8yZcD3GdOyL41iwEwz7mdnW2fAczJcoRZEZMDM
+K0WF/4NpwO9K5Y/9+mXATCScopesa8BsY25+5LFnwMwc878v1W3A6Hv3bMto
+acBMFUrdx/1vwGSUgFuyH2vA5oZQ/S8TccDgrAlKmdZswCYD/At8J3LAXcWS
+OICNbsBmf6cayDtzwOzujZMzInDApftSKRRQdMAGvabC
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-258.1375918907422, 2.460516530696805}, {-325.0049222222827, 
+   3.0978826005567597`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{5.21196216842878, 5.21196216842878}, {6.562056096456789,
+    6.562056096456789}}]], "Print",
+ CellChangeTimes->{3.673816870942239*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6738168709460783`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "8"}],
+  SequenceForm["n  ", 8],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673816870946594*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "33.9999999997`"}]}],
+  SequenceForm["fixed point ~ ", -33.9999999997],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673816870947075*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAACb0O/CgBBEA1hWsdch8JQFFqH2qI
+pCpAKfNewc66MECGD6mJrSQ9wLoPMePFTELA8TQhb4t7RkDfpbJlJDxMQCDi
+bRnAZE7AAh4adMEVU8CnR91h+iZTQBXpWrVwDVhAP54Dt5QbV8AntJv2HwVd
+wNb0KQwvEFtAnT/um2f+YEBtS1BhyQRfwCaljjw/emPAAlE727F8YUCwCi/d
+FvZlQE58zgX/dmPAOXDPfe5xaMCZp2EwTHFlQMLVbx7G7WpA5dL0WplrZ8BL
+OxC/nWltwDH+h4XmZWlA1aCwX3Xlb0B8KRuwM2BrwC+DKICmMHHAyFSu2oBa
+bUD0tXhQkm5yQBSAQQXOVG/AuOjIIH6sc8CwVeqXjadwQH0bGfFp6nRAVesz
+LbSkccBCTmnBVSh2wPuAfcLaoXJABoG5kUFmd0AYt5UN
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAACb0O/CgBBEA1hWsdch8JQFFqH2qI
+pCpAKfNewc66MECGD6mJrSQ9wLoPMePFTELA8TQhb4t7RkDfpbJlJDxMQCDi
+bRnAZE7AAh4adMEVU8CnR91h+iZTQBXpWrVwDVhAP54Dt5QbV8AntJv2HwVd
+wNb0KQwvEFtAnT/um2f+YEBtS1BhyQRfwCaljjw/emPAAlE727F8YUCwCi/d
+FvZlQE58zgX/dmPAOXDPfe5xaMCZp2EwTHFlQMLVbx7G7WpA5dL0WplrZ8BL
+OxC/nWltwDH+h4XmZWlA1aCwX3Xlb0B8KRuwM2BrwC+DKICmMHHAyFSu2oBa
+bUD0tXhQkm5yQBSAQQXOVG/AuOjIIH6sc8CwVeqXjadwQH0bGfFp6nRAVesz
+LbSkccBCTmnBVSh2wPuAfcLaoXJABoG5kUFmd0AYt5UN
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-282.2939884212586, 298.1159081366056}, {-354.52093640456235`, 
+   374.3910081144571}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{11.608197931157283`, 11.608197931157283`}, {
+   14.57823889038039, 14.57823889038039}}]], "Print",
+ CellChangeTimes->{3.673817179281464*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673817179285276*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "9"}],
+  SequenceForm["n  ", 9],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738171792857933`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "36.`"}]}],
+  SequenceForm["fixed point ~ ", -36.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673817179286273*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAMtA6ZnfZA0DZ/MyGMRsKQGiMsu70
++S3ACpKTTG62M8A/zbztkTpAwKeLAGUhWEXAZPfMn6b2SMAkp9vRhWpQwMSQ
+7qhd2VDAdQg38fooVsDXpfYBaDdVwMZpkhBw51vA6br+WnKVWcCL5faX8tJg
+wPzPBrR8813ANJakJy2yY8CHcoeGwyhhwNxGUrdnkWbAEH0Ls8hXY8CF9/9G
+onBpwJmHj9/NhmXALait1txPbMAjkhMM07VnwNZYW2YXL2/ArJyXONjkacC/
+hAT7KAdxwDWnG2XdE2zAE13bQsZ2csC+sZ+R4kJuwGc1sopj5nPAJN4R3/M4
+cMC8DYnSAFZ1wGjjU3V2UHHAEOZfGp7FdsCt6JUL+WdywGS+NmI7NXjA8u3X
+oXt/c8C4lg2q2KR5wDbzGTj+lnTADG/k8XUUe8BUuK3l
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAMtA6ZnfZA0DZ/MyGMRsKQGiMsu70
++S3ACpKTTG62M8A/zbztkTpAwKeLAGUhWEXAZPfMn6b2SMAkp9vRhWpQwMSQ
+7qhd2VDAdQg38fooVsDXpfYBaDdVwMZpkhBw51vA6br+WnKVWcCL5faX8tJg
+wPzPBrR8813ANJakJy2yY8CHcoeGwyhhwNxGUrdnkWbAEH0Ls8hXY8CF9/9G
+onBpwJmHj9/NhmXALait1txPbMAjkhMM07VnwNZYW2YXL2/ArJyXONjkacC/
+hAT7KAdxwDWnG2XdE2zAE13bQsZ2csC+sZ+R4kJuwGc1sopj5nPAJN4R3/M4
+cMC8DYnSAFZ1wGjjU3V2UHHAEOZfGp7FdsCt6JUL+WdywGS+NmI7NXjA8u3X
+oXt/c8C4lg2q2KR5wDbzGTj+lnTADG/k8XUUe8BUuK3l
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-329.43706522118316`, 2.481184767408217}, {-433.2787951396174, 
+   3.2632780581767347`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{6.638364999771827, 6.638364999771827}, {
+   8.730841463955883, 8.730841463955883}}]], "Print",
+ CellChangeTimes->{3.67381747410597*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673817474109613*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "10"}],
+  SequenceForm["n  ", 10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673817474110136*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "38.`"}]}],
+  SequenceForm["fixed point ~ ", -38.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673817474110642*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAm3ojsPxFBEDbYSIkwTUKQJlSYBWb
+TzFAnoJAf0xhNkBmi2Lg+pNCwHWngpGoBEjAgO0UNiiATEDNhrJxVWxSQM2n
+48UqNlPA4LmjmlbWWMDZ2LxwQSxYQPPslMNXQF9A5gmWG1giXcADEEN2LNVi
+wHmdN2M3DGFAjKm7Ci0KZkAANqS4QodjwBZDNJ8tP2nAhs4QDk4CZkCf3Kwz
+LnRsQA1nfWNZfWjAKXYlyC6pb8CT/+m4ZPhqQNkHT64Xb3FAGZhWDnBzbcCe
+VIv4lwlzwKAww2N77m9AYqHHQhikdECT5JdcwzRxwCfuA42YPnbA1jBOB0ly
+ckDsOkDXGNl3QBp9BLLOr3PAsYd8IZlzecBdybpcVO10QHXUuGsZDntAoBVx
+B9oqdsA6IfW1mah8wONhJ7JfaHdA/20xABpDfkCo85HI
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAm3ojsPxFBEDbYSIkwTUKQJlSYBWb
+TzFAnoJAf0xhNkBmi2Lg+pNCwHWngpGoBEjAgO0UNiiATEDNhrJxVWxSQM2n
+48UqNlPA4LmjmlbWWMDZ2LxwQSxYQPPslMNXQF9A5gmWG1giXcADEEN2LNVi
+wHmdN2M3DGFAjKm7Ci0KZkAANqS4QodjwBZDNJ8tP2nAhs4QDk4CZkCf3Kwz
+LnRsQA1nfWNZfWjAKXYlyC6pb8CT/+m4ZPhqQNkHT64Xb3FAGZhWDnBzbcCe
+VIv4lwlzwKAww2N77m9AYqHHQhikdECT5JdcwzRxwCfuA42YPnbA1jBOB0ly
+ckDsOkDXGNl3QBp9BLLOr3PAsYd8IZlzecBdybpcVO10QHXUuGsZDntAoBVx
+B9oqdsA6IfW1mah8wONhJ7JfaHdA/20xABpDfkCo85HI
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-354.6782297532427, 374.5233632601141}, {-458.5375270438559, 
+   484.1938478403899}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{14.584031860267137`, 14.584031860267137`}, {
+   18.854627497684916`, 18.854627497684916`}}]], "Print",
+ CellChangeTimes->{3.673817759488332*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6738177594919653`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "11"}],
+  SequenceForm["n  ", 11],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673817759492491*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "40.`"}]}],
+  SequenceForm["fixed point ~ ", -40.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673817759493005*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAh9rWkFxoBEA4nD6N/bAKQD+3TqEb
+YjPAyn+rifxZOcDfJFxqoahEwJdpf2IMBUvAH+4QBDWgT8CkiRRAja5UwK/b
+4k7kS1XAfV7pTpTaW8BPQL0brsdawKsZ365Ng2HAeNJL9LshYMAYhEk2URll
+wMcEudqg32LAhO6zvVSvaMAXNybBhZ1lwPFYHkVYRWzAZ2mTp2pbaMBdw4jM
+W9tvwLebAI5PGWvA5Zb5qa+4ccAHzm10NNdtwBvMrm2xg3PALIBtrYxKcMBR
+AWQxs051wFQZpCB/qXHAhzYZ9bQZd8B8stqTcQhzwL5rzri25HjAo0sRB2Rn
+dMD0oIN8uK96wMvkR3pWxnXAKtY4QLp6fMDzfX7tSCV3wGAL7gO8RX7AGxe1
+YDuEeMBLoNHjXgiAwEOw69Mt43nA5jqsxd/tgMANkqab
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAh9rWkFxoBEA4nD6N/bAKQD+3TqEb
+YjPAyn+rifxZOcDfJFxqoahEwJdpf2IMBUvAH+4QBDWgT8CkiRRAja5UwK/b
+4k7kS1XAfV7pTpTaW8BPQL0brsdawKsZ365Ng2HAeNJL9LshYMAYhEk2URll
+wMcEudqg32LAhO6zvVSvaMAXNybBhZ1lwPFYHkVYRWzAZ2mTp2pbaMBdw4jM
+W9tvwLebAI5PGWvA5Zb5qa+4ccAHzm10NNdtwBvMrm2xg3PALIBtrYxKcMBR
+AWQxs051wFQZpCB/qXHAhzYZ9bQZd8B8stqTcQhzwL5rzri25HjAo0sRB2Rn
+dMD0oIN8uK96wMvkR3pWxnXAKtY4QLp6fMDzfX7tSCV3wGAL7gO8RX7AGxe1
+YDuEeMBLoNHjXgiAwEOw69Mt43nA5jqsxd/tgMANkqab
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-414.1986884314139, 2.550957805210888}, {-541.7342637496447, 
+   3.3364211115581632`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{8.334992924732497, 8.334992924732497}, {
+   10.901413697224056`, 10.901413697224056`}}]], "Print",
+ CellChangeTimes->{3.673818028785185*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673818028788499*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "12"}],
+  SequenceForm["n  ", 12],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738180287890263`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "42.`"}]}],
+  SequenceForm["fixed point ~ ", -42.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673818028789516*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA3WF+oRR9BEAJlGTyPDYLQIdNru5s
+bjVA7BvzlMd2PECmM8Y4PrZGwCxlGWQrKk7ARKAa/aJaUUAxntx+eQxXQLUm
+0t0mWlfAzImsS90DX8AlrYm+qlldQLQ6PoygfWNAy5mgT5esYcCBMKZyUnln
+wARd/D9ZrGRATyYOWQR1a0A8IFgwG6xnwBwcdj+2cG/AdeOzIN2rakD1CO8S
+NLZxQK2mDxGfq23A3AMjBg20c8DztLWAsFVwQMP+VvnlsXVAj5bjeJHVccCp
++Yrsvq93wCt4EXFyVXNAkPS+35eteUDHWT9pU9V0wHfv8tJwq3vAZDttYTRV
+dkBe6ibGSal9QAAdm1kV1XfAROVauSKnf8Cc/shR9lR5QBZwR9Z90oBAOOD2
+SdfUesCJbeFPatGBwNXBJEK4VHxA/Gp7yVbQgkBXu52+
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA3WF+oRR9BEAJlGTyPDYLQIdNru5s
+bjVA7BvzlMd2PECmM8Y4PrZGwCxlGWQrKk7ARKAa/aJaUUAxntx+eQxXQLUm
+0t0mWlfAzImsS90DX8AlrYm+qlldQLQ6PoygfWNAy5mgT5esYcCBMKZyUnln
+wARd/D9ZrGRATyYOWQR1a0A8IFgwG6xnwBwcdj+2cG/AdeOzIN2rakD1CO8S
+NLZxQK2mDxGfq23A3AMjBg20c8DztLWAsFVwQMP+VvnlsXVAj5bjeJHVccCp
++Yrsvq93wCt4EXFyVXNAkPS+35eteUDHWT9pU9V0wHfv8tJwq3vAZDttYTRV
+dkBe6ibGSal9QAAdm1kV1XfAROVauSKnf8Cc/shR9lR5QBZwR9Z90oBAOOD2
+SdfUesCJbeFPatGBwNXBJEK4VHxA/Gp7yVbQgkBXu52+
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-429.3025607722843, 453.29498495443596`}, {-570.1769101726105, 
+   602.0423764841103}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{17.651950914534407`, 17.651950914534407`}, {
+   23.444385733134414`, 23.444385733134414`}}]], "Print",
+ CellChangeTimes->{3.673818289339909*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673818289343059*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "13"}],
+  SequenceForm["n  ", 13],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673818289343587*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "44.`"}]}],
+  SequenceForm["fixed point ~ ", -44.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673818289344079*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAmpk3tP+qBECDqkiZS5ALQKwRHdDJ
+qjfAPDioTUCQP8BFi2DLefVIwHJhnoOipFDA2kZZV8cKU8DWtNLzNGVZwBJI
+AsnRmlnAHIQDsuMSYcClpFUdbhVgwM6tHeosc2XAQSUqVnNdY8CA1zcidtNp
+wNyl/o54pWbAMQFSWr8zbsB4JtPHfe1pwHEVNkkESnHAFKenAIM1bcBKKkPl
+KHpzwNgTvhzEPnDAIz9QgU2qdcAmVCi5xuJxwPxTXR1y2nfAdJSSVcmGc8DV
+aGq5lgp6wMLU/PHLKnXArX13Vbs6fMAQFWeOzs52wIaShPHfan7AXlXRKtFy
+eMCw08hGgk2AwKyVO8fTFnrAHF7PlJRlgcD51aVj1rp7wIjo1eKmfYLARxYQ
+ANlefcD1ctwwuZWDwJVWepzbAn/AYf3ifsuthMBKkqcJ
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAmpk3tP+qBECDqkiZS5ALQKwRHdDJ
+qjfAPDioTUCQP8BFi2DLefVIwHJhnoOipFDA2kZZV8cKU8DWtNLzNGVZwBJI
+AsnRmlnAHIQDsuMSYcClpFUdbhVgwM6tHeosc2XAQSUqVnNdY8CA1zcidtNp
+wNyl/o54pWbAMQFSWr8zbsB4JtPHfe1pwHEVNkkESnHAFKenAIM1bcBKKkPl
+KHpzwNgTvhzEPnDAIz9QgU2qdcAmVCi5xuJxwPxTXR1y2nfAdJSSVcmGc8DV
+aGq5lgp6wMLU/PHLKnXArX13Vbs6fMAQFWeOzs52wIaShPHfan7AXlXRKtFy
+eMCw08hGgk2AwKyVO8fTFnrAHF7PlJRlgcD51aVj1rp7wIjo1eKmfYLARxYQ
+ANlefcD1ctwwuZWDwJVWepzbAn/AYf3ifsuthMBKkqcJ
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-496.1786160258137, 2.583495529124048}, {-661.7243631108832, 
+   3.445456693201153}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{9.975242231098756, 9.975242231098756}, {
+   13.30339639608169, 13.30339639608169}}]], "Print",
+ CellChangeTimes->{3.6738185339401073`*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673818533943831*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "14"}],
+  SequenceForm["n  ", 14],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67381853394436*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "46.`"}]}],
+  SequenceForm["fixed point ~ ", -46.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738185339448757`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAnTT9e5sTBUDiSJjNlpILQBOz9MUL
+WDpAppPOr1A7QUBchrR9RalLwO1VO2blF1LAmFk3jEITVUAHYo90IpJbQAFw
+lFniUVzAEbdxwS+GYsA1w3gTQchhQB69m0hOQ2dAak4n+pBnZcArw8XPbABs
+wJ/Z1eDgBmlAnOR3q8VecEDUZITHMKZswKPnDO9UvXLABHgZV8AicECp6qEy
+5Bt1QJ+9cEpo8nHAsO02dnN6d8A5A8g9EMJzQLbwy7kC2XlA00gfMbiRdcC9
+82D9kTd8wG6OdiRgYXdAw/b1QCGWfkAI1M0XCDF5wOV8RUJYeoDAoxklC7AA
+e0Bo/g/kn6mBQD1ffP5X0HzA63/ahefYgsDXpNPx/59+QG8BpScvCIRAOXWV
+8tM3gMDygm/JdjeFwAYYQeynH4FAdQQ6a75mhkAoypwo
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAnTT9e5sTBUDiSJjNlpILQBOz9MUL
+WDpAppPOr1A7QUBchrR9RalLwO1VO2blF1LAmFk3jEITVUAHYo90IpJbQAFw
+lFniUVzAEbdxwS+GYsA1w3gTQchhQB69m0hOQ2dAak4n+pBnZcArw8XPbABs
+wJ/Z1eDgBmlAnOR3q8VecEDUZITHMKZswKPnDO9UvXLABHgZV8AicECp6qEy
+5Bt1QJ+9cEpo8nHAsO02dnN6d8A5A8g9EMJzQLbwy7kC2XlA00gfMbiRdcC9
+82D9kTd8wG6OdiRgYXdAw/b1QCGWfkAI1M0XCDF5wOV8RUJYeoDAoxklC7AA
+e0Bo/g/kn6mBQD1ffP5X0HzA63/ahefYgsDXpNPx/59+QG8BpScvCIRAOXWV
+8tM3gMDygm/JdjeFwAYYQeynH4FAdQQ6a75mhkAoypwo
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-518.9784900356673, 547.9569935880143}, {-678.9330013954007, 
+   716.8429779560671}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{21.338709672473634`, 21.338709672473634`}, {
+   27.915519587029358`, 27.915519587029358`}}]], "Print",
+ CellChangeTimes->{3.673818766206925*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673818766210391*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "15"}],
+  SequenceForm["n  ", 15],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673818766210928*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "48.`"}]}],
+  SequenceForm["fixed point ~ ", -48.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738187662114353`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAp5hq+AQDBUBqe0AiejUMQNi3Ildl
+SzzAvGzs4Tn+QsBjYammlZtNwJdw/rLl31PAbbPgULyIVsDRqgZ1rkBewCi2
+bM6tQ17AhXKHm7tQZMByXPylT/9iwKKPi/wfgWnAz13CZMjcZsC+rI9dhLFu
+wC1fiCNBumrA7eRJX/TwccCLYE7iuZduwHzzy48miXTA9DCKUJk6ccAKAk7A
+WCF3wKMx7a9VKXPAmBDQ8Iq5ecBSMlAPEhh1wCcfUiG9UXzAATOzbs4Gd8C1
+LdRR7+l+wK8zFs6K9XjAIh4rwRDBgMBeNHktR+R6wGklbNkpDYLADTXcjAPT
+fMCwLK3xQlmDwLw1P+y/wX7A9zPuCVylhMA1G9ElPliAwD47LyJ18YXAjZuC
+VZxPgcCFQnA6jj2HwOQbNIX6RoLAzUmxUqeJiMDIq6TC
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAp5hq+AQDBUBqe0AiejUMQNi3Ildl
+SzzAvGzs4Tn+QsBjYammlZtNwJdw/rLl31PAbbPgULyIVsDRqgZ1rkBewCi2
+bM6tQ17AhXKHm7tQZMByXPylT/9iwKKPi/wfgWnAz13CZMjcZsC+rI9dhLFu
+wC1fiCNBumrA7eRJX/TwccCLYE7iuZduwHzzy48miXTA9DCKUJk6ccAKAk7A
+WCF3wKMx7a9VKXPAmBDQ8Iq5ecBSMlAPEhh1wCcfUiG9UXzAATOzbs4Gd8C1
+LdRR7+l+wK8zFs6K9XjAIh4rwRDBgMBeNHktR+R6wGklbNkpDYLADTXcjAPT
+fMCwLK3xQlmDwLw1P+y/wX7A9zPuCVylhMA1G9ElPliAwD47LyJ18YXAjZuC
+VZxPgcCFQnA6jj2HwOQbNIX6RoLAzUmxUqeJiMDIq6TC
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-584.8723243781101, 2.62647432399088}, {-785.2067006922385, 
+   3.526111857979619}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{11.74997597404202, 11.74997597404202}, {
+   15.774656251004362`, 15.774656251004362`}}]], "Print",
+ CellChangeTimes->{3.67381899297554*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6738189929788113`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "16"}],
+  SequenceForm["n  ", 16],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67381899297934*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "50.`"}]}],
+  SequenceForm["fixed point ~ ", -50.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673818992979827*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAjMuvvzNRBUDH4Ap831AMQIHsW/Nk
+8z5AWFp5yV+ORECddKsXPCRQwF6xWcXmcFXAGe5/8p6LWEDIWvvSTk1gQMsz
+quaAeWDA4dxJQyriZcCJcBRUMq1kQPpemLMFd2tAR61+wePgaMCKcPOR8IVw
+wAbq6C6VFG1AlrEaSl5Qc0BikylOI6RwwKPyQQLMGnbAwbHeBPy9ckCvM2m6
+OeV4QCDQk7vU13TAvHSQcqeve8B/7khyrfF2QMm1tyoVen5A3wz+KIYLecBr
+e29xQaKAwD4rs99eJXtA8RuDTXgHgkCdSWiWNz99wHe8limvbIPA/GcdTRBZ
+f0D9XKoF5tGEQC5D6YF0uYDAhP294Rw3hsBd0kPdYMaBQAqe0b1TnIdAjWGe
+OE3TgsCQPuWZigGJwLzw+JM54INAF9/4dcFmikD5YKPj
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAjMuvvzNRBUDH4Ap831AMQIHsW/Nk
+8z5AWFp5yV+ORECddKsXPCRQwF6xWcXmcFXAGe5/8p6LWEDIWvvSTk1gQMsz
+quaAeWDA4dxJQyriZcCJcBRUMq1kQPpemLMFd2tAR61+wePgaMCKcPOR8IVw
+wAbq6C6VFG1AlrEaSl5Qc0BikylOI6RwwKPyQQLMGnbAwbHeBPy9ckCvM2m6
+OeV4QCDQk7vU13TAvHSQcqeve8B/7khyrfF2QMm1tyoVen5A3wz+KIYLecBr
+e29xQaKAwD4rs99eJXtA8RuDTXgHgkCdSWiWNz99wHe8limvbIPA/GcdTRBZ
+f0D9XKoF5tGEQC5D6YF0uYDAhP294Rw3hsBd0kPdYMaBQAqe0b1TnIdAjWGe
+OE3TgsCQPuWZigGJwLzw+JM54INAF9/4dcFmikD5YKPj
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-602.4127056478043, 636.0281142662493}, {-800.1926763448446, 
+   844.8444632952768}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{24.76881639828107, 24.76881639828107}, {
+   32.90074279280243, 32.90074279280243}}]], "Print",
+ CellChangeTimes->{3.673819208396413*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673819208399506*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "17"}],
+  SequenceForm["n  ", 17],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673819208400054*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "52.`"}]}],
+  SequenceForm["fixed point ~ ", -52.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738192084005623`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAsyDuzHuIBUDKege3WYYMQIFyBnYz
+wkDAfL+LaTMzRsCH421Ud25RwFL7QzdmF1fAzY3Y7dR7WsBzC+FcmYphwAqc
+oUOZxGHAPhkgnn+JZ8At8VYQSEtmwAgnX99liG3AUEYM3fbRasBpGk8QpsNx
+wHObwamlWG/ATqHuMBnDdMBLeDs7qu9xwDMojlGMwnfA3SKWoQEzdMAYry1y
+/8F6wG7N8AdZdnbA/TXNknLBfcAAeEtusLl4wHFettlyYIDAkSKm1Af9esDk
+IQZqLOCBwCPNADtfQH3AVuVV+uVfg8C1d1uhtoN/wMmopYqf34TAIxHbA4fj
+gMA7bPUaWV+GwGxmCLcyBYLAri9FqxLfh8C1uzVq3iaDwCDzlDvMXonA/RBj
+HYpIhMCTtuTLhd6KwEZmkNA1aoXABno0XD9ejMAhRqJf
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAsyDuzHuIBUDKege3WYYMQIFyBnYz
+wkDAfL+LaTMzRsCH421Ud25RwFL7QzdmF1fAzY3Y7dR7WsBzC+FcmYphwAqc
+oUOZxGHAPhkgnn+JZ8At8VYQSEtmwAgnX99liG3AUEYM3fbRasBpGk8QpsNx
+wHObwamlWG/ATqHuMBnDdMBLeDs7qu9xwDMojlGMwnfA3SKWoQEzdMAYry1y
+/8F6wG7N8AdZdnbA/TXNknLBfcAAeEtusLl4wHFettlyYIDAkSKm1Af9esDk
+IQZqLOCBwCPNADtfQH3AVuVV+uVfg8C1d1uhtoN/wMmopYqf34TAIxHbA4fj
+gMA7bPUaWV+GwGxmCLcyBYLAri9FqxLfh8C1uzVq3iaDwCDzlDvMXonA/RBj
+HYpIhMCTtuTLhd6KwEZmkNA1aoXABno0XD9ejMAhRqJf
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-685.2762767106258, 2.691642380730707}, {-907.7809375858058, 
+   3.565600805202256}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{13.75935838182713, 13.75935838182713}, {
+   18.22693076782016, 18.22693076782016}}]], "Print",
+ CellChangeTimes->{3.673819418714719*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673819418718363*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "18"}],
+  SequenceForm["n  ", 18],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673819418718899*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "54.`"}]}],
+  SequenceForm["fixed point ~ ", -54.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738194187194*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAwr+fJ4e7BUBldfZo1rwMQKHHbUT+
+DkJAxRxBJSPhR0Cfxap92rxSwHDQiNgJx1jAbace2TVyXEA/iTgPwc5iQJ5E
+SZrIE2PARaosMv05acCFNQNIdu5nQEzLIFU5pW9AbCa99SPJbMApdgq8Oghz
+wKqLu9Ho0XBArYaEzdg9dkAdhJioPz9zwDCX/t52c3nAkXx1f5asdUC0p3jw
+FKl8QAV1UlbtGXjAN7jyAbPef8B4bS8tRId6QF1ktokoioFA7GUMBJv0fMCf
+bHOS9ySDwGBe6drxYX9A4HQwm8a/hEBqK+NYpOeAwCJ97aOVWobAo6dRxE8e
+gkBkhaqsZPWHQN0jwC/7VIPApo1ntTOQicAXoC6bpouEQOeVJL4CK4tAURyd
+BlLChcApnuHG0cWMwIuYC3L9+IZAa6aez6BgjkDvVKEM
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAwr+fJ4e7BUBldfZo1rwMQKHHbUT+
+DkJAxRxBJSPhR0Cfxap92rxSwHDQiNgJx1jAbace2TVyXEA/iTgPwc5iQJ5E
+SZrIE2PARaosMv05acCFNQNIdu5nQEzLIFU5pW9AbCa99SPJbMApdgq8Oghz
+wKqLu9Ho0XBArYaEzdg9dkAdhJioPz9zwDCX/t52c3nAkXx1f5asdUC0p3jw
+FKl8QAV1UlbtGXjAN7jyAbPef8B4bS8tRId6QF1ktokoioFA7GUMBJv0fMCf
+bHOS9ySDwGBe6drxYX9A4HQwm8a/hEBqK+NYpOeAwCJ97aOVWobAo6dRxE8e
+gkBkhaqsZPWHQN0jwC/7VIPApo1ntTOQicAXoC6bpouEQOeVJL4CK4tAURyd
+BlLChcApnuHG0cWMwIuYC3L9+IZAa6aez6BgjkDvVKEM
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-696.2900516771571, 735.1237526803901}, {-920.727430117263, 
+   972.0785210032021}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{28.628276087150944`, 28.628276087150944`}, {
+   37.8561190224093, 37.8561190224093}}]], "Print",
+ CellChangeTimes->{3.673819620825444*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673819620828719*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "19"}],
+  SequenceForm["n  ", 19],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738196208292503`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "56.`"}]}],
+  SequenceForm["fixed point ~ ", -56.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673819620829747*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAdk5YWkLDBUBvTaC69igNQCiQWGRM
+MkPAJ1+VtLK4ScCbUit3ZuBTwJNhamr6oVrAI10qvKYnXsDJCUW9zTNkwNWz
+lIBzN2TAyeJURZ4Wa8AZORSjE1tpwORdsma3/HDAXb6TxbN+bsBkSrqqH250
+wNChCfQp0XHA5DbC7offd8ByZEkF+mJ0wGMjyjLwUHvAFCeJFsr0dsDjD9J2
+WMJ+wLbpyCeahnnAMv5sXeAZgcBYrAg5ahh8wHH0cH+U0oLA+W5ISjqqfsCx
+6nShSIuEwM4YxC0FnoDA8eB4w/xDhsAf+mM27eaBwDHXfOWw/IfAcNsDP9Uv
+g8BxzYAHZbWJwMC8o0e9eITAscOEKRlui8ARnkNQpcGFwPG5iEvNJo3AYn/j
+WI0Kh8AxsIxtgd+OwLNgg2F1U4jAOFPIxxpMkMA2QqlA
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAdk5YWkLDBUBvTaC69igNQCiQWGRM
+MkPAJ1+VtLK4ScCbUit3ZuBTwJNhamr6oVrAI10qvKYnXsDJCUW9zTNkwNWz
+lIBzN2TAyeJURZ4Wa8AZORSjE1tpwORdsma3/HDAXb6TxbN+bsBkSrqqH250
+wNChCfQp0XHA5DbC7offd8ByZEkF+mJ0wGMjyjLwUHvAFCeJFsr0dsDjD9J2
+WMJ+wLbpyCeahnnAMv5sXeAZgcBYrAg5ahh8wHH0cH+U0oLA+W5ISjqqfsCx
+6nShSIuEwM4YxC0FnoDA8eB4w/xDhsAf+mM27eaBwDHXfOWw/IfAcNsDP9Uv
+g8BxzYAHZbWJwMC8o0e9eITAscOEKRlui8ARnkNQpcGFwPG5iEvNJo3AYn/j
+WI0Kh8AxsIxtgd+OwLNgg2F1U4jAOFPIxxpMkMA2QqlA
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-778.4323148979078, 2.7203414018820764`}, {-1043.026152734832, 
+   3.645001848237079}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{15.623053125995796`, 15.623053125995796`}, {
+   20.933423091661385`, 20.933423091661385`}}]], "Print",
+ CellChangeTimes->{3.673819818283535*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673819818286532*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "20"}],
+  SequenceForm["n  ", 20],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673819818287076*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "58.`"}]}],
+  SequenceForm["fixed point ~ ", -58.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738198182875834`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAkFB5w7YaBkC8PbptOyYNQLkzoZ0g
+uURA/5kVxfNTS0A9/rxT9mlVwOxrg6AlPVzAT7FULK47YEBtBT6vKGhlQH/j
+yi5hwmXA41Q6jr6xbMCwFUExFElrQC1Smzaq/XFA8KPbmeNncMDoeRkmdaJ1
+wAi9Fhs9K3NAo6GXFUBHeUAh1lGclu51wF/JFQUL7HzAOe+MHfCxeECN+En6
+akiAQFEIyJ5JdXvAawwJctAagsBpIQMgozh+QEggyOk17YNAQR2fUP59gMAm
+NIdhm7+FwM2pPBGr34FABEhG2QCSh0BZNtrRV0GDwOFbBVFmZInA5cJ3kgSj
+hEC/b8TIyzaLQHFPFVOxBIbAnYODQDEJjcD927ITXmaHQHqXQriW245AiWhQ
+1ArIiMCs1QAY/laQwBb17ZS3KYpAm1/g0zBAkUCzS5fl
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAkFB5w7YaBkC8PbptOyYNQLkzoZ0g
+uURA/5kVxfNTS0A9/rxT9mlVwOxrg6AlPVzAT7FULK47YEBtBT6vKGhlQH/j
+yi5hwmXA41Q6jr6xbMCwFUExFElrQC1Smzaq/XFA8KPbmeNncMDoeRkmdaJ1
+wAi9Fhs9K3NAo6GXFUBHeUAh1lGclu51wF/JFQUL7HzAOe+MHfCxeECN+En6
+akiAQFEIyJ5JdXvAawwJctAagsBpIQMgozh+QEggyOk17YNAQR2fUP59gMAm
+NIdhm7+FwM2pPBGr34FABEhG2QCSh0BZNtrRV0GDwOFbBVFmZInA5cJ3kgSj
+hEC/b8TIyzaLQHFPFVOxBIbAnYODQDEJjcD927ITXmaHQHqXQriW245AiWhQ
+1ArIiMCs1QAY/laQwBb17ZS3KYpAm1/g0zBAkUCzS5fl
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-793.005287769499, 837.2146395292682}, {-1045.7481384401717`, 
+   1104.0476832445481`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{32.60439854597534, 32.60439854597534}, {
+   42.995916433694404`, 42.995916433694404`}}]], "Print",
+ CellChangeTimes->{3.67382000771952*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"elasped seconds   \"\>", "\[InvisibleSpace]", 
+   "6035.907313`9.931257559988941"}],
+  SequenceForm["elasped seconds   ", 6035.907313`9.931257559988941],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738200077222958`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"start", "=", 
+     RowBox[{"SessionTime", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"streamzeros", "=", 
+     RowBox[{"OpenRead", "[", "\"\<barryzerosprecision1000no8\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"betterbarryzeroslist", "=", 
+     RowBox[{"ReadList", "[", "streamzeros", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamzeros", "]"}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"streamfx", "=", 
+     RowBox[{"OpenRead", "[", "\"\<realfxptsprecision1000no1\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fxlist", "=", 
+     RowBox[{"ReadList", "[", "streamfx", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamfx", "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"stream1", "=", 
+     RowBox[{"OpenAppend", "[", "\"\<realfxNrhoNrun1jun16no11\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"precision", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "20"}], ",", 
+      RowBox[{"n", "<", "30"}], ",", 
+      RowBox[{
+       RowBox[{"n", "++"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"shortorbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"data", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"thetaset", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"errorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"relerrorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"targetzero", "=", 
+        RowBox[{
+         RowBox[{"1", "/", "2"}], "+", 
+         RowBox[{"I", "*", 
+          RowBox[{"betterbarryzeroslist", "[", 
+           RowBox[{"[", 
+            RowBox[{"n", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fx", "=", 
+        RowBox[{"fxlist", "[", 
+         RowBox[{"[", 
+          RowBox[{"n", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", 
+        "\"\<&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<n  \>\"", ",", "n"}], "]"}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<fixed point ~ \>\"", ",", 
+         RowBox[{"N", "[", 
+          RowBox[{"Round", "[", 
+           RowBox[{"fx", ",", 
+            RowBox[{"1", "/", 
+             RowBox[{"10", "^", "10"}]}]}], "]"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"k", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"zr", "=", "targetzero"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Write", "[", 
+        RowBox[{"stream1", ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"arg", "=", 
+        RowBox[{"Arg", "[", 
+         RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"args", ",", "arg"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"la", "=", 
+        RowBox[{"Re", "[", 
+         RowBox[{"Log", "[", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpair", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"la", "*", 
+           RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+          RowBox[{"la", "*", 
+           RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"k", "=", "1"}], ",", 
+          RowBox[{"k", "<", "20"}], ",", 
+          RowBox[{
+           RowBox[{"k", "++"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"startcenter", "=", "fx"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"x", "=", 
+            RowBox[{"orbit", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", "-", "1"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"zr", "=", 
+            RowBox[{
+             RowBox[{"FindRoot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"zetaIterate", "[", 
+                 RowBox[{"s", ",", "1"}], "]"}], "-", "x"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"s", ",", "startcenter"}], "}"}], ",", 
+               RowBox[{"PrecisionGoal", "\[Rule]", 
+                RowBox[{"precision", "+", "50"}]}], ",", 
+               RowBox[{"WorkingPrecision", "->", 
+                RowBox[{"precision", "+", "100"}]}]}], "]"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Write", "[", 
+            RowBox[{"stream1", ",", 
+             RowBox[{"{", 
+              RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"shortorbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"shortorbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"arg", "=", 
+            RowBox[{"Arg", "[", 
+             RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"While", "[", 
+            RowBox[{
+             RowBox[{"Not", "[", 
+              RowBox[{
+               RowBox[{"arg", "-", 
+                RowBox[{"Last", "[", "args", "]"}]}], ">", "1"}], "]"}], ",", 
+             
+             RowBox[{"arg", "=", 
+              RowBox[{"arg", "+", 
+               RowBox[{"2", "*", "Pi"}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"args", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"args", ",", "arg"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"la", "=", 
+            RowBox[{"Re", "[", 
+             RowBox[{"Log", "[", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpair", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"la", "*", 
+               RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+              RowBox[{"la", "*", 
+               RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpairs", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}]}]}], 
+         "\[IndentingNewLine]", "]"}], 
+        RowBox[{"(*", 
+         RowBox[{"close", " ", "k", " ", "loop"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"PlotStyle", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Red", ",", 
+                RowBox[{"PointSize", "[", ".011", "]"}]}], "}"}]}]}], "]"}], 
+           ",", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}], "]"}], 
+         "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"close", " ", "n"}], "-", "loop"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"Close", "[", "stream1", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<elasped seconds   \>\"", ",", 
+     RowBox[{
+      RowBox[{"SessionTime", "[", "]"}], "-", "start"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{
+  3.672574497315132*^9, 3.6738111637744923`*^9, {3.673812152541301*^9, 
+   3.673812165867248*^9}, {3.673812286976053*^9, 3.673812294710019*^9}, {
+   3.6738137874257917`*^9, 3.673813806085183*^9}, {3.673813902643778*^9, 
+   3.6738139136803923`*^9}, {3.6738719893868427`*^9, 3.673872000992927*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673872020286468*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "21"}],
+  SequenceForm["n  ", 21],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872020286978*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "60.`"}]}],
+  SequenceForm["fixed point ~ ", -60.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872020287709*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAX4QNXiVUBkBTd5gk70cNQAd0dWGY
+JkbAWBCFXzMMTcAp4GWMOdlWwBPUqdhy9l3AKIMIdJNPYcD9j8gAZrNmwDsW
+3iGKMmfA8DU8lZJrbsBOqbPPgBVtwPLt15TfEXPAMZ7Evjt8ccDrwBHf9e12
+wLpnrxW3bXTA5ZNLKQzKesBEMZpsMl93wN9mhXMipn7AzfqEw61QesDsnN9e
+HEGBwFfEbxopQn3AaYb8gycvg8DwRq040hmAwOZvGakyHYXAtasi5I+SgcBj
+WTbOPQuHwHoQmI9NC4PA30JT80j5iMA/dQ07C4SEwFwscBhU54rAA9qC5sj8
+hcDZFY09X9WMwMg++JGGdYfAVv+pYmrDjsCNo209RO6IwGl048O6WJDAUgjj
+6AFnisAo6XFWwE+RwBZtWJS/34vA5l0A6cVGksCkw6T2
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAX4QNXiVUBkBTd5gk70cNQAd0dWGY
+JkbAWBCFXzMMTcAp4GWMOdlWwBPUqdhy9l3AKIMIdJNPYcD9j8gAZrNmwDsW
+3iGKMmfA8DU8lZJrbsBOqbPPgBVtwPLt15TfEXPAMZ7Evjt8ccDrwBHf9e12
+wLpnrxW3bXTA5ZNLKQzKesBEMZpsMl93wN9mhXMipn7AzfqEw61QesDsnN9e
+HEGBwFfEbxopQn3AaYb8gycvg8DwRq040hmAwOZvGakyHYXAtasi5I+SgcBj
+WTbOPQuHwHoQmI9NC4PA30JT80j5iMA/dQ07C4SEwFwscBhU54rAA9qC5sj8
+hcDZFY09X9WMwMg++JGGdYfAVv+pYmrDjsCNo209RO6IwGl048O6WJDAUgjj
+6AFnisAo6XFWwE+RwBZtWJS/34vA5l0A6cVGksCkw6T2
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-891.9685446651736, 2.791086897647389}, {-1169.6932716424285`, 
+   3.6601240977314915`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{17.895192631256418`, 17.895192631256418`}, {
+   23.467067914803202`, 23.467067914803202`}}]], "Print",
+ CellChangeTimes->{3.673872208432922*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673872208436213*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "22"}],
+  SequenceForm["n  ", 22],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872208436841*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "62.`"}]}],
+  SequenceForm["fixed point ~ ", -62.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738722084374323`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAcxX/WZNbBkB5416Js6gNQNJ2rsCw
+WUdAzI48LM35TkB9b35bjQxYwOiFh8gS51/AydFSKyE2YkA1Ynh9nyhoQNNr
+5qj7ZWjAu4BWy9oucMDdBXom1pVuQFvQ8NdlSXRA9M8GUthicsD8H4vk8GN4
+wPmc0JDFenVAnG8l8Xt+fED+aZrPspJ4wJ7f336DTIDAAzdkDqCqe0BvBy0F
+yVmCQAgELk2Nwn7APy96iw5nhMCH6PtFPe2AQA9XxxFUdIZACc9g5TN5gsDf
+fhSYmYGIwIy1xYQqBYRAr6ZhHt+OikAOnCokIZGFwIDOrqQknIzAkYKPwxcd
+h0BQ9vsqaqmOQBNp9GIOqYjAEI+k2FdbkMCWT1kCBTWKQPgiy5v6YZFAGTa+
+ofvAi8DgtvFenWiSwJscI0HyTI1AyEoYIkBvk0D1w57C
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAcxX/WZNbBkB5416Js6gNQNJ2rsCw
+WUdAzI48LM35TkB9b35bjQxYwOiFh8gS51/AydFSKyE2YkA1Ynh9nyhoQNNr
+5qj7ZWjAu4BWy9oucMDdBXom1pVuQFvQ8NdlSXRA9M8GUthicsD8H4vk8GN4
+wPmc0JDFenVAnG8l8Xt+fED+aZrPspJ4wJ7f336DTIDAAzdkDqCqe0BvBy0F
+yVmCQAgELk2Nwn7APy96iw5nhMCH6PtFPe2AQA9XxxFUdIZACc9g5TN5gsDf
+fhSYmYGIwIy1xYQqBYRAr6ZhHt+OikAOnCokIZGFwIDOrqQknIzAkYKPwxcd
+h0BQ9vsqaqmOQBNp9GIOqYjAEI+k2FdbkMCWT1kCBTWKQPgiy5v6YZFAGTa+
+ofvAi8DgtvFenWiSwJscI0HyTI1AyEoYIkBvk0D1w57C
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-888.1228670940646, 937.618288301764}, {-1178.1536824958675`, 
+   1243.8126300616877`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{36.51482310791658, 36.51482310791658}, {
+   48.43932625115111, 48.43932625115111}}]], "Print",
+ CellChangeTimes->{3.673872385928854*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673872385931925*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "23"}],
+  SequenceForm["n  ", 23],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872385932523*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "64.`"}]}],
+  SequenceForm["fixed point ~ ", -64.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738723859331284`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAaQubRnWeBkD8f+8bF7cNQLXlob9w
+40jA7LOD8itZUMAQvtZpZJhZwOxx804I0GDAo0TuOYhfY8DiCaWkenNpwD4q
+8T7e8mnA7FArfXYLccDsB/ohGkNwwOccBKgvXXXAunp7JMWMc8Di6NzS6K55
+wIft/CZw1nbA3bS1/aEAfsBVYH4pGyB6wGxAR5QtKYHAItP/K8ZpfcBpprMp
+ClKDwPiiQJe4WYDAZwwgv+Z6hcBfXIEYjv6BwGRyjFTDo4fAxRXCmWOjg8Bi
+2Pjpn8yJwCzPAhs5SIXAXz5lf3z1i8CTiEOcDu2GwF2k0RRZHo7A+UGEHeSR
+iMAtBR/VmiOQwGD7xJ65NorALDjVHwk4kcDHtAUgj9uLwCtri2p3TJLALm5G
+oWSAjcApnkG15WCTwJQnhyI6JY/AKNH3/1N1lMAHBKd/
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAaQubRnWeBkD8f+8bF7cNQLXlob9w
+40jA7LOD8itZUMAQvtZpZJhZwOxx804I0GDAo0TuOYhfY8DiCaWkenNpwD4q
+8T7e8mnA7FArfXYLccDsB/ohGkNwwOccBKgvXXXAunp7JMWMc8Di6NzS6K55
+wIft/CZw1nbA3bS1/aEAfsBVYH4pGyB6wGxAR5QtKYHAItP/K8ZpfcBpprMp
+ClKDwPiiQJe4WYDAZwwgv+Z6hcBfXIEYjv6BwGRyjFTDo4fAxRXCmWOjg8Bi
+2Pjpn8yJwCzPAhs5SIXAXz5lf3z1i8CTiEOcDu2GwF2k0RRZHo7A+UGEHeSR
+iMAtBR/VmiOQwGD7xJ65NorALDjVHwk4kcDHtAUgj9uLwCtri2p3TJLALm5G
+oWSAjcApnkG15WCTwJQnhyI6JY/AKNH3/1N1lMAHBKd/
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-996.6533861693338, 2.8273721233430718`}, {-1309.332031128064, 
+   3.7143995459045964`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{19.989615165853536`, 19.989615165853536`}, {
+   26.260928613479372`, 26.260928613479372`}}]], "Print",
+ CellChangeTimes->{3.673872552602529*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673872552606002*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "24"}],
+  SequenceForm["n  ", 24],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872552606553*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "66.`"}]}],
+  SequenceForm["fixed point ~ ", -66.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872552607047*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA2+Cf8EPCBkAlikV9l+sNQBvWVT94
+SUpADC5BdYBHUUAi1dpeiv9awDVENtMuv2HAm18FTyxtZEBj8ctrndpqQKZU
+nW6TWmvASc8wAgb7ccDYpBpH/SNxQOCle069iHZAXZ/m1rCadMB3fMaadBZ7
+wOKZsmZkEXhAD1MR5yukf0BnlH72F4h7wNMUrpnxGILA7Y5Khsv+fkAfgNM/
+zV+EQLlEC4u/OoHAauv45aimhsD7QfFSGfaCQLZWHoyE7YhAPj/XGnOxhMAC
+wkMyYDSLwIE8veLMbIZATS1p2Dt7jUDDOaOqJiiIwJmYjn4Xwo/ABjeJcoDj
+iUDyAVqSeQSRQEg0bzranovAmLdsZecnksCLMVUCNFqNQD5tfzhVS5NAzS47
+yo0Vj8DkIpILw26UwAiWEMlzaJBAidik3jCSlUDkNpuP
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA2+Cf8EPCBkAlikV9l+sNQBvWVT94
+SUpADC5BdYBHUUAi1dpeiv9awDVENtMuv2HAm18FTyxtZEBj8ctrndpqQKZU
+nW6TWmvASc8wAgb7ccDYpBpH/SNxQOCle069iHZAXZ/m1rCadMB3fMaadBZ7
+wOKZsmZkEXhAD1MR5yukf0BnlH72F4h7wNMUrpnxGILA7Y5Khsv+fkAfgNM/
+zV+EQLlEC4u/OoHAauv45aimhsD7QfFSGfaCQLZWHoyE7YhAPj/XGnOxhMAC
+wkMyYDSLwIE8veLMbIZATS1p2Dt7jUDDOaOqJiiIwJmYjn4Xwo/ABjeJcoDj
+iUDyAVqSeQSRQEg0bzranovAmLdsZecnksCLMVUCNFqNQD5tfzhVS5NAzS47
+yo0Vj8DkIpILw26UwAiWEMlzaJBAidik3jCSlUDkNpuP
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-994.6942333816202, 1050.113071688802}, {-1307.6904738267704`, 
+   1380.5477243191874`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{40.89614610140844, 40.89614610140844}, {
+   53.764763962919154`, 53.764763962919154`}}]], "Print",
+ CellChangeTimes->{3.67387271189997*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673872711903219*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "25"}],
+  SequenceForm["n  ", 25],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67387271190375*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "68.`"}]}],
+  SequenceForm["fixed point ~ ", -68.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872711904244*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAbylX3rYPB0DoBnhGEeYNQKxG4hZh
+9kvABGUWH1wgUsD4/9TN3q5cwB9FMGT0l2LATW4ciEaxZcC9V9W4uh9swJ5c
+TqkdC23ALTW9hsDTcsB3JUBlejJywHy+D7Gjl3fAoBzZ9WXfdcDLR2Lbhlt8
+wMgTcoZRjHnAjWjaArWPgMDxCgsXPTl9wDStA5im8YLADAHSUxRzgMDb8Swt
+mFOFwKF8HhyKSYLAgzZWwom1h8A1+Grk/x+EwCp7f1d7F4rAyXO3rHX2hcDS
+v6jsbHmMwF3vA3XrzIfAeQTSgV7bjsDyalA9YaOJwJCkfQuonpDAhuacBdd5
+i8DkRhLWoM+RwBpi6c1MUI3AOOmmoJkAk8Cu3TWWwiaPwIuLO2uSMZTAoSxB
+L5x+kMDfLdA1i2KVwGtqZxPXaZHAM9BkAISTlsA3l6WV
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAbylX3rYPB0DoBnhGEeYNQKxG4hZh
+9kvABGUWH1wgUsD4/9TN3q5cwB9FMGT0l2LATW4ciEaxZcC9V9W4uh9swJ5c
+TqkdC23ALTW9hsDTcsB3JUBlejJywHy+D7Gjl3fAoBzZ9WXfdcDLR2Lbhlt8
+wMgTcoZRjHnAjWjaArWPgMDxCgsXPTl9wDStA5im8YLADAHSUxRzgMDb8Swt
+mFOFwKF8HhyKSYLAgzZWwom1h8A1+Grk/x+EwCp7f1d7F4rAyXO3rHX2hcDS
+v6jsbHmMwF3vA3XrzIfAeQTSgV7bjsDyalA9YaOJwJCkfQuonpDAhuacBdd5
+i8DkRhLWoM+RwBpi6c1MUI3AOOmmoJkAk8Cu3TWWwiaPwIuLO2uSMZTAoSxB
+L5x+kMDfLdA1i2KVwGtqZxPXaZHAM9BkAISTlsA3l6WV
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1114.460034957762, 2.882673012766808}, {-1444.878907752235, 
+   3.7373376374606444`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{22.34685415941058, 22.34685415941058}, {
+   28.972324907793908`, 28.972324907793908`}}]], "Print",
+ CellChangeTimes->{3.673872867940815*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673872867944598*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "26"}],
+  SequenceForm["n  ", 26],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872867945133*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "70.`"}]}],
+  SequenceForm["fixed point ~ ", -70.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673872867945627*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAauk0r84QB0CjxieIw0IOQB8qc05R
+M01Ayo/0R5cnU0Br0ezD1+tdwOQuFVaioGPA4wZQcAOfZkDkFTAIea1tQBCl
+qf4aSG7Acn4l3Sfdc8CfoYFGmfhyQPHxMjaT43hAtnCuDSXNdsBxZUCP/ul9
+wMw/29SwoXpAeOwm9DR4gUDjDgicPHZ+wDimraBq+4PA/W6aMWQlgUD4XzRN
+oH6GQIjWMBWqD4PAuBm7+dUBicAUPsf47/mEQHjTQaYLhYtAn6Vd3DXkhsA4
+jchSQQiOwCoN9L97zohAfKOnf7tFkEC2dIqjwbiKwFwA61VWh5HAQdwghwej
+jEA8XS4s8ciSQM1Dt2pNjY7AHLpxAowKlMCs1SanyTuQQPsWtdgmTJVAcgny
+mOwwkcDbc/iuwY2WwDc9vYoPJpJAu9A7hVzPl0DPOqFN
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAauk0r84QB0CjxieIw0IOQB8qc05R
+M01Ayo/0R5cnU0Br0ezD1+tdwOQuFVaioGPA4wZQcAOfZkDkFTAIea1tQBCl
+qf4aSG7Acn4l3Sfdc8CfoYFGmfhyQPHxMjaT43hAtnCuDSXNdsBxZUCP/ul9
+wMw/29SwoXpAeOwm9DR4gUDjDgicPHZ+wDimraBq+4PA/W6aMWQlgUD4XzRN
+oH6GQIjWMBWqD4PAuBm7+dUBicAUPsf47/mEQHjTQaYLhYtAn6Vd3DXkhsA4
+jchSQQiOwCoN9L97zohAfKOnf7tFkEC2dIqjwbiKwFwA61VWh5HAQdwghwej
+jEA8XS4s8ciSQM1Dt2pNjY7AHLpxAowKlMCs1SanyTuQQPsWtdgmTJVAcgny
+mOwwkcDbc/iuwY2WwDc9vYoPJpJAu9A7hVzPl0DPOqFN
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1100.2310521906152`, 
+   1161.5151776856053`}, {-1443.4391440220559`, 1523.8403519960546`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{45.234924597524405`, 45.234924597524405`}, {
+   59.34558992036221, 59.34558992036221}}]], "Print",
+ CellChangeTimes->{3.6738730206673927`*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673873020671143*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "27"}],
+  SequenceForm["n  ", 27],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873020671728*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "72.`"}]}],
+  SequenceForm["fixed point ~ ", -72.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873020672286*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA8keHpxJCB0ADfZFSQV0OQG6irxMT
+w07AeE/WhJgUVMCu3OuoI31fwGyVIIoNjmTAEvT/417MZ8AcA9bRzhFvwM75
+ifMr2m/AZrjFDMjKdMDF/4mB/PNzwD5voLCoDHrAogJPCeP6d8AWJntUiU5/
+wIAFFJHJAXzAd+4q/DRIgsAvhGwMWASAwONJGE4l6YTAngVPUMsHgsBPpQWg
+FYqHwA2HMZQ+C4TAuwDz8QUrisB7CBTYsQ6GwCdc4EP2y4zA6on2GyUSiMCT
+t82V5myPwFkL2V+YFYrAf4ndc+sGkcDIjLujCxmMwDU31JxjV5LANw6e534c
+jsDr5MrF26eTwNNHwBX5D5DAoZLB7lP4lMCKiLG3shGRwFdAuBfMSJbAQsmi
+WWwTksAN7q5ARJmXwPkJlPslFZPAw5ulabzpmMBL/KZh
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA8keHpxJCB0ADfZFSQV0OQG6irxMT
+w07AeE/WhJgUVMCu3OuoI31fwGyVIIoNjmTAEvT/417MZ8AcA9bRzhFvwM75
+ifMr2m/AZrjFDMjKdMDF/4mB/PNzwD5voLCoDHrAogJPCeP6d8AWJntUiU5/
+wIAFFJHJAXzAd+4q/DRIgsAvhGwMWASAwONJGE4l6YTAngVPUMsHgsBPpQWg
+FYqHwA2HMZQ+C4TAuwDz8QUrisB7CBTYsQ6GwCdc4EP2y4zA6on2GyUSiMCT
+t82V5myPwFkL2V+YFYrAf4ndc+sGkcDIjLujCxmMwDU31JxjV5LANw6e534c
+jsDr5MrF26eTwNNHwBX5D5DAoZLB7lP4lMCKiLG3shGRwFdAuBfMSJbAQsmi
+WWwTksAN7q5ARJmXwPkJlPslFZPAw5ulabzpmMBL/KZh
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1221.287092507466, 2.9072621429595467`}, {-1594.433996760971, 
+   3.7955347490930094`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{24.483887093008512`, 24.483887093008512`}, {
+   31.964590630201283`, 31.964590630201283`}}]], "Print",
+ CellChangeTimes->{3.673873169832901*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673873169836336*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "28"}],
+  SequenceForm["n  ", 28],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873169836919*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "74.`"}]}],
+  SequenceForm["fixed point ~ ", -74.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873169837449*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAwgKRYvSOB0AemtWA9VAOQCbohg25
+RVBAGMlzga3wVEAxLBHf9KNgwIEfd1fxaWXAT+ReNw0laUA7LRr3xS1wQDdO
+1scS03DAtcp4QpOmdcBGKv3znhN1QC9o141gH3tAVQYkICtUecDVApvsFkyA
+wGTiSky3lH1AklFKkn0Ig0A53zi8oeqAwE+g+TfkxIXAQU1M0ucKg0AM76jd
+SoGIQEi7X+gtK4XAyj1Yg7E9i8BQKXP+c0uHQIeMBykY+o1AV5eGFLpricCi
+bVtnP1uQwF8FmioAjItAARUzunK5kUBmc61ARqyNwF+8Cg2mF5PAbuHAVozM
+j0C+Y+Jf2XWUQLsnajZp9pDAHAu6sgzUlcC+3nNBjAaSQHuykQVAMpdAwpV9
+TK8Wk8DZWWlYc5CYwMZMh1fSJpRAOAFBq6bumUDI4Zbd
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAwgKRYvSOB0AemtWA9VAOQCbohg25
+RVBAGMlzga3wVEAxLBHf9KNgwIEfd1fxaWXAT+ReNw0laUA7LRr3xS1wQDdO
+1scS03DAtcp4QpOmdcBGKv3znhN1QC9o141gH3tAVQYkICtUecDVApvsFkyA
+wGTiSky3lH1AklFKkn0Ig0A53zi8oeqAwE+g+TfkxIXAQU1M0ucKg0AM76jd
+SoGIQEi7X+gtK4XAyj1Yg7E9i8BQKXP+c0uHQIeMBykY+o1AV5eGFLpricCi
+bVtnP1uQwF8FmioAjItAARUzunK5kUBmc61ARqyNwF+8Cg2mF5PAbuHAVozM
+j0C+Y+Jf2XWUQLsnajZp9pDAHAu6sgzUlcC+3nNBjAaSQHuykQVAMpdAwpV9
+TK8Wk8DZWWlYc5CYwMZMh1fSJpRAOAFBq6bumUDI4Zbd
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1221.6711902258544`, 
+   1289.7054120197877`}, {-1572.1126419507111`, 1659.6627626568788`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{50.22753204491284, 50.22753204491284}, {
+   64.6355080921518, 64.6355080921518}}]], "Print",
+ CellChangeTimes->{3.6738733124648438`*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673873312468739*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "29"}],
+  SequenceForm["n  ", 29],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873312469336*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "76.`"}]}],
+  SequenceForm["fixed point ~ ", -76.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6738733124699183`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAEv/OlHukB0A9ZCLtRIsOQAx/zZsx
+/VDAT5hmfcXyVcAIuyCKw1thwOAhG5HybGbAirZaRu44asDMe8ExQfBwwAZZ
+SoEMi3HAqGb1GgmqdsDHVmffofl1wIRRKQTRY3zAiFSEPTdoesAwnq52zA6B
+wElSoZvM1n7AnpNIa7Drg8AFKN/8sKKBwAyJ4l+UyIbA5qbtq/vZg8B6fnxU
+eKWJwMYl/FpGEYbA6XMWSVyCjMCnpAoKkUiIwFdpsD1AX4/AhyMZudt/isBi
+LyUZEh6RwGiiJ2gmt4zAGSpyE4SMksBIITYXce6OwNAkvw32+pPAFFAi492S
+kMCHHwwIaGmVwIWPqTqDrpHAPxpZAtrXlsD1zjCSKMqSwPYUpvxLRpjAZQ64
+6c3lk8CtD/P2vbSZwNVNP0FzAZXAZApA8S8jm8Ccy6Rj
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAEv/OlHukB0A9ZCLtRIsOQAx/zZsx
+/VDAT5hmfcXyVcAIuyCKw1thwOAhG5HybGbAirZaRu44asDMe8ExQfBwwAZZ
+SoEMi3HAqGb1GgmqdsDHVmffofl1wIRRKQTRY3zAiFSEPTdoesAwnq52zA6B
+wElSoZvM1n7AnpNIa7Drg8AFKN/8sKKBwAyJ4l+UyIbA5qbtq/vZg8B6fnxU
+eKWJwMYl/FpGEYbA6XMWSVyCjMCnpAoKkUiIwFdpsD1AX4/AhyMZudt/isBi
+LyUZEh6RwGiiJ2gmt4zAGSpyE4SMksBIITYXce6OwNAkvw32+pPAFFAi492S
+kMCHHwwIaGmVwIWPqTqDrpHAPxpZAtrXlsD1zjCSKMqSwPYUpvxLRpjAZQ64
+6c3lk8CtD/P2vbSZwNVNP0FzAZXAZApA8S8jm8Ccy6Rj
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1344.3625535861258`, 
+   2.9553138375921515`}, {-1736.7968187338201`, 3.8180025602455587`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{26.94635734847436, 26.94635734847436}, {
+   34.812296425881314`, 34.812296425881314`}}]], "Print",
+ CellChangeTimes->{3.673873459937845*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673873459941504*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "30"}],
+  SequenceForm["n  ", 30],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873459942107*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "78.`"}]}],
+  SequenceForm["fixed point ~ ", -78.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873459942672*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA0d8+B7vHB0DMcoNlRbEOQPtc6s3F
+w1FAoSVFR7DtVkB6WAe65CJiwGwz21x1aGfAd4IZjeZja0AE6glLCa1xQDrW
+FTB0UnLAUjqm59eld8A4654Z9fJ2QJ+KQoSmnn1ANwAoA3aTe8B3bW+QusuB
+wJuKWHb7GYBAnZW93iHIhEAaFR3rO2qCwMS9Cy2JxIfAmZ/hX3y6hEDr5Vl7
+8MCKQBgqptS8CofAEg6oyVe9jcCXtGpJ/VqJQB0b+4vfXJBAFz8vvj2ri8Aw
+LyIzE9uRwJbJ8zJ++41AQ0NJ2kZZk0ALKtxT3yWQwFdXcIF615TASm8+jv9N
+kUBqa5corlWWQIq0oMgfdpLAfn++z+HTl8DJ+QIDQJ6TQJGT5XYVUplACT9l
+PWDGlMClpwweSdCawEmEx3eA7pVAuLszxXxOnECw455y
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA0d8+B7vHB0DMcoNlRbEOQPtc6s3F
+w1FAoSVFR7DtVkB6WAe65CJiwGwz21x1aGfAd4IZjeZja0AE6glLCa1xQDrW
+FTB0UnLAUjqm59eld8A4654Z9fJ2QJ+KQoSmnn1ANwAoA3aTe8B3bW+QusuB
+wJuKWHb7GYBAnZW93iHIhEAaFR3rO2qCwMS9Cy2JxIfAmZ/hX3y6hEDr5Vl7
+8MCKQBgqptS8CofAEg6oyVe9jcCXtGpJ/VqJQB0b+4vfXJBAFz8vvj2ri8Aw
+LyIzE9uRwJbJ8zJ++41AQ0NJ2kZZk0ALKtxT3yWQwFdXcIF615TASm8+jv9N
+kUBqa5corlWWQIq0oMgfdpLAfn++z+HTl8DJ+QIDQJ6TQJGT5XYVUplACT9l
+PWDGlMClpwweSdCawEmEx3eA7pVAuLszxXxOnECw455y
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1329.5939842052196`, 1403.6254569220057`}, {-1716.07140369199,
+    1811.6218460162472`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{54.66438882254451, 54.66438882254451}, {
+   70.55386499416474, 70.55386499416474}}]], "Print",
+ CellChangeTimes->{3.673873602307604*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"elasped seconds   \"\>", "\[InvisibleSpace]", 
+   "1582.043114`9.34973331259236"}],
+  SequenceForm["elasped seconds   ", 1582.043114`9.34973331259236],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673873602311717*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"start", "=", 
+     RowBox[{"SessionTime", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"streamzeros", "=", 
+     RowBox[{"OpenRead", "[", "\"\<barryzerosprecision1000no8\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"betterbarryzeroslist", "=", 
+     RowBox[{"ReadList", "[", "streamzeros", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamzeros", "]"}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"streamfx", "=", 
+     RowBox[{"OpenRead", "[", "\"\<realfxptsprecision1000no1\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fxlist", "=", 
+     RowBox[{"ReadList", "[", "streamfx", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamfx", "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"stream1", "=", 
+     RowBox[{"OpenAppend", "[", "\"\<realfxNrhoNrun1jun16no11\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"precision", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "30"}], ",", 
+      RowBox[{"n", "<", "31"}], ",", 
+      RowBox[{
+       RowBox[{"n", "++"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"shortorbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"data", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"thetaset", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"errorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"relerrorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"targetzero", "=", 
+        RowBox[{
+         RowBox[{"1", "/", "2"}], "+", 
+         RowBox[{"I", "*", 
+          RowBox[{"betterbarryzeroslist", "[", 
+           RowBox[{"[", 
+            RowBox[{"n", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fx", "=", 
+        RowBox[{"fxlist", "[", 
+         RowBox[{"[", 
+          RowBox[{"n", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", 
+        "\"\<&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<n  \>\"", ",", "n"}], "]"}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<fixed point ~ \>\"", ",", 
+         RowBox[{"N", "[", 
+          RowBox[{"Round", "[", 
+           RowBox[{"fx", ",", 
+            RowBox[{"1", "/", 
+             RowBox[{"10", "^", "10"}]}]}], "]"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"k", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"zr", "=", "targetzero"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Write", "[", 
+        RowBox[{"stream1", ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"arg", "=", 
+        RowBox[{"Arg", "[", 
+         RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"args", ",", "arg"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"la", "=", 
+        RowBox[{"Re", "[", 
+         RowBox[{"Log", "[", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpair", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"la", "*", 
+           RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+          RowBox[{"la", "*", 
+           RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"k", "=", "1"}], ",", 
+          RowBox[{"k", "<", "20"}], ",", 
+          RowBox[{
+           RowBox[{"k", "++"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"startcenter", "=", "fx"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"x", "=", 
+            RowBox[{"orbit", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", "-", "1"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"zr", "=", 
+            RowBox[{
+             RowBox[{"FindRoot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"zetaIterate", "[", 
+                 RowBox[{"s", ",", "1"}], "]"}], "-", "x"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"s", ",", "startcenter"}], "}"}], ",", 
+               RowBox[{"PrecisionGoal", "\[Rule]", 
+                RowBox[{"precision", "+", "50"}]}], ",", 
+               RowBox[{"WorkingPrecision", "->", 
+                RowBox[{"precision", "+", "100"}]}]}], "]"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Write", "[", 
+            RowBox[{"stream1", ",", 
+             RowBox[{"{", 
+              RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"shortorbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"shortorbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"arg", "=", 
+            RowBox[{"Arg", "[", 
+             RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"While", "[", 
+            RowBox[{
+             RowBox[{"Not", "[", 
+              RowBox[{
+               RowBox[{"arg", "-", 
+                RowBox[{"Last", "[", "args", "]"}]}], ">", "1"}], "]"}], ",", 
+             
+             RowBox[{"arg", "=", 
+              RowBox[{"arg", "+", 
+               RowBox[{"2", "*", "Pi"}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"args", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"args", ",", "arg"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"la", "=", 
+            RowBox[{"Re", "[", 
+             RowBox[{"Log", "[", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpair", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"la", "*", 
+               RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+              RowBox[{"la", "*", 
+               RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpairs", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}]}]}], 
+         "\[IndentingNewLine]", "]"}], 
+        RowBox[{"(*", 
+         RowBox[{"close", " ", "k", " ", "loop"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"PlotStyle", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Red", ",", 
+                RowBox[{"PointSize", "[", ".011", "]"}]}], "}"}]}]}], "]"}], 
+           ",", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}], "]"}], 
+         "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"close", " ", "n"}], "-", "loop"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"Close", "[", "stream1", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<elasped seconds   \>\"", ",", 
+     RowBox[{
+      RowBox[{"SessionTime", "[", "]"}], "-", "start"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{
+  3.672574497315132*^9, 3.6738111637744923`*^9, {3.673812152541301*^9, 
+   3.673812165867248*^9}, {3.673812286976053*^9, 3.673812294710019*^9}, {
+   3.6738137874257917`*^9, 3.673813806085183*^9}, {3.673813902643778*^9, 
+   3.6738139136803923`*^9}, {3.6738719893868427`*^9, 3.673872000992927*^9}, {
+   3.6739144934300632`*^9, 3.6739144971031313`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673914509743536*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "31"}],
+  SequenceForm["n  ", 31],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673914509744193*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "80.`"}]}],
+  SequenceForm["fixed point ~ ", -80.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739145097450237`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAjfNKPF/sB0CqTPHwWdMOQE/3tdq+
+jlLA4IcfYGnpV8AdI6dXcO5iwBNN48e2ZGjAk0rzQYGVbMAba9tvXGpywAS5
+HxZJHnPArC/Fe12ieMC/zEWL0fF3wD30rode2n7AeuBrAFrFfMBnXMzJL4mC
+wBv6yDpxzIDAsD7BTzClhcD4A1x1NTaDwPkgttUwwYjA1Q3vr/mfhcBBA6tb
+Md2LwLMXguq9CYjAiuWf4TH5jsCQIRUlgnOKwOljyjOZCpHAbiuoX0bdjMAO
+1cR2mZiSwEs1O5oKR4/AMka/uZkmlMCUH2dqZ9iQwFa3ufyZtJXAg6Swh0kN
+ksB7KLQ/mkKXwHIp+qQrQpPAn5mugprQmMBhrkPCDXeUwMMKqcWaXprATzON
+3++rlcDoe6MIm+ybwD641vzR4JbADO2dS5t6ncB5Tq5f
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAAjfNKPF/sB0CqTPHwWdMOQE/3tdq+
+jlLA4IcfYGnpV8AdI6dXcO5iwBNN48e2ZGjAk0rzQYGVbMAba9tvXGpywAS5
+HxZJHnPArC/Fe12ieMC/zEWL0fF3wD30rode2n7AeuBrAFrFfMBnXMzJL4mC
+wBv6yDpxzIDAsD7BTzClhcD4A1x1NTaDwPkgttUwwYjA1Q3vr/mfhcBBA6tb
+Md2LwLMXguq9CYjAiuWf4TH5jsCQIRUlgnOKwOljyjOZCpHAbiuoX0bdjMAO
+1cR2mZiSwEs1O5oKR4/AMka/uZkmlMCUH2dqZ9iQwFa3ufyZtJXAg6Swh0kN
+ksB7KLQ/mkKXwHIp+qQrQpPAn5mugprQmMBhrkPCDXeUwMMKqcWaXprATzON
+3++rlcDoe6MIm+ybwD641vzR4JbADO2dS5t6ncB5Tq5f
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1464.2050660657837`, 
+   2.990416022336325}, {-1886.6516556430752`, 3.8531988929404024`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{29.3439096417624, 29.3439096417624}, {37.81009709072031,
+    37.81009709072031}}]], "Print",
+ CellChangeTimes->{3.673914644057925*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"elasped seconds   \"\>", "\[InvisibleSpace]", 
+   "134.420954`8.278981971142443"}],
+  SequenceForm["elasped seconds   ", 134.420954`8.278981971142443],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739146440615788`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"start", "=", 
+     RowBox[{"SessionTime", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"streamzeros", "=", 
+     RowBox[{"OpenRead", "[", "\"\<barryzerosprecision1000no8\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"betterbarryzeroslist", "=", 
+     RowBox[{"ReadList", "[", "streamzeros", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamzeros", "]"}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"streamfx", "=", 
+     RowBox[{"OpenRead", "[", "\"\<realfxptsprecision1000no1\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fxlist", "=", 
+     RowBox[{"ReadList", "[", "streamfx", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Close", "[", "streamfx", "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"stream1", "=", 
+     RowBox[{"OpenAppend", "[", "\"\<realfxNrhoNrun1jun16no11\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"precision", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "31"}], ",", 
+      RowBox[{"n", "<", "50"}], ",", 
+      RowBox[{
+       RowBox[{"n", "++"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"shortorbit", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"data", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"thetaset", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"errorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"relerrorpairs", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"targetzero", "=", 
+        RowBox[{
+         RowBox[{"1", "/", "2"}], "+", 
+         RowBox[{"I", "*", 
+          RowBox[{"betterbarryzeroslist", "[", 
+           RowBox[{"[", 
+            RowBox[{"n", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fx", "=", 
+        RowBox[{"fxlist", "[", 
+         RowBox[{"[", 
+          RowBox[{"n", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", 
+        "\"\<&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<n  \>\"", ",", "n"}], "]"}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<fixed point ~ \>\"", ",", 
+         RowBox[{"N", "[", 
+          RowBox[{"Round", "[", 
+           RowBox[{"fx", ",", 
+            RowBox[{"1", "/", 
+             RowBox[{"10", "^", "10"}]}]}], "]"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"k", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"zr", "=", "targetzero"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Write", "[", 
+        RowBox[{"stream1", ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbit", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"arg", "=", 
+        RowBox[{"Arg", "[", 
+         RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"args", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"args", ",", "arg"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"la", "=", 
+        RowBox[{"Re", "[", 
+         RowBox[{"Log", "[", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpair", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"la", "*", 
+           RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+          RowBox[{"la", "*", 
+           RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"orbitpairs", "=", 
+        RowBox[{"Append", "[", 
+         RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"k", "=", "1"}], ",", 
+          RowBox[{"k", "<", "20"}], ",", 
+          RowBox[{
+           RowBox[{"k", "++"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"startcenter", "=", "fx"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"x", "=", 
+            RowBox[{"orbit", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", "-", "1"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"zr", "=", 
+            RowBox[{
+             RowBox[{"FindRoot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"zetaIterate", "[", 
+                 RowBox[{"s", ",", "1"}], "]"}], "-", "x"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"s", ",", "startcenter"}], "}"}], ",", 
+               RowBox[{"PrecisionGoal", "\[Rule]", 
+                RowBox[{"precision", "+", "50"}]}], ",", 
+               RowBox[{"WorkingPrecision", "->", 
+                RowBox[{"precision", "+", "100"}]}]}], "]"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Write", "[", 
+            RowBox[{"stream1", ",", 
+             RowBox[{"{", 
+              RowBox[{"n", ",", "k", ",", "zr"}], "}"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"shortorbit", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"shortorbit", ",", "zr"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"arg", "=", 
+            RowBox[{"Arg", "[", 
+             RowBox[{"zr", "-", "fx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"While", "[", 
+            RowBox[{
+             RowBox[{"Not", "[", 
+              RowBox[{
+               RowBox[{"arg", "-", 
+                RowBox[{"Last", "[", "args", "]"}]}], ">", "1"}], "]"}], ",", 
+             
+             RowBox[{"arg", "=", 
+              RowBox[{"arg", "+", 
+               RowBox[{"2", "*", "Pi"}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"args", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"args", ",", "arg"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"la", "=", 
+            RowBox[{"Re", "[", 
+             RowBox[{"Log", "[", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"zr", "-", "fx"}], "]"}], "]"}], "]"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpair", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"la", "*", 
+               RowBox[{"Cos", "[", "arg", "]"}]}], ",", 
+              RowBox[{"la", "*", 
+               RowBox[{"Sin", "[", "arg", "]"}]}]}], "}"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"orbitpairs", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"orbitpairs", ",", "orbitpair"}], "]"}]}]}]}], 
+         "\[IndentingNewLine]", "]"}], 
+        RowBox[{"(*", 
+         RowBox[{"close", " ", "k", " ", "loop"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", 
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"PlotStyle", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Red", ",", 
+                RowBox[{"PointSize", "[", ".011", "]"}]}], "}"}]}]}], "]"}], 
+           ",", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{"orbitpairs", ",", 
+             RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}], "]"}], 
+         "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"close", " ", "n"}], "-", "loop"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"Close", "[", "stream1", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<elasped seconds   \>\"", ",", 
+     RowBox[{
+      RowBox[{"SessionTime", "[", "]"}], "-", "start"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{
+  3.672574497315132*^9, 3.6738111637744923`*^9, {3.673812152541301*^9, 
+   3.673812165867248*^9}, {3.673812286976053*^9, 3.673812294710019*^9}, {
+   3.6738137874257917`*^9, 3.673813806085183*^9}, {3.673813902643778*^9, 
+   3.6738139136803923`*^9}, {3.6738719893868427`*^9, 3.673872000992927*^9}, {
+   3.673914660304141*^9, 3.673914669126594*^9}, {3.673914706677662*^9, 
+   3.673914709837056*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673914726536868*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "32"}],
+  SequenceForm["n  ", 32],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673914726537409*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "82.`"}]}],
+  SequenceForm["fixed point ~ ", -82.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673914726538146*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA3HCi/eAjCEDAI3h/wdoOQOagLjwQ
+cFNATG/BLxzYWECqKiXAn9BjwNtPvzWHU2nA4QQzYjfpbUAI9M4pgB1zQIxv
+IILnAHTAI0C+uDyRecCnXCdTMw15QB/G1qN8AoBAwkkuJH8ZfsAsbE7rWjyD
+wG+bmnrlkoFAORLGMjl2hkD8ER5jCxmEwEa4PXoXsInAioihSzGfhkBUXrXB
+9emMQBj/JDRXJYnAMIKWBOoRkMCldagcfauLQDdVUijZrpFAM+wrBaMxjsA+
+KA5MyEuTwGCx13bkW5BARPvJb7folECnbBlr956RwEvOhZOmhZbA7idbXwri
+kkBSoUG3lSKYQDXjnFMdJZTAWHT92oS/mcB8nt5HMGiVQF9Huf5zXJtAw1kg
+PEOrlsBmGnUiY/mcwAkVYjBW7pdAbO0wRlKWnkDIaJY4
+      "]]}, {}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBUQGu/iFib1JlAgAAABQAAAACAAAA3HCi/eAjCEDAI3h/wdoOQOagLjwQ
+cFNATG/BLxzYWECqKiXAn9BjwNtPvzWHU2nA4QQzYjfpbUAI9M4pgB1zQIxv
+IILnAHTAI0C+uDyRecCnXCdTMw15QB/G1qN8AoBAwkkuJH8ZfsAsbE7rWjyD
+wG+bmnrlkoFAORLGMjl2hkD8ER5jCxmEwEa4PXoXsInAioihSzGfhkBUXrXB
+9emMQBj/JDRXJYnAMIKWBOoRkMCldagcfauLQDdVUijZrpFAM+wrBaMxjsA+
+KA5MyEuTwGCx13bkW5BARPvJb7folECnbBlr956RwEvOhZOmhZbA7idbXwri
+kkBSoUG3lSKYQDXjnFMdJZTAWHT92oS/mcB8nt5HMGiVQF9Huf5zXJtAw1kg
+PEOrlsBmGnUiY/mcwAkVYjBW7pdAbO0wRlKWnkDIaJY4
+      "]]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1450.815659051398, 1531.584168942007}, {-1854.3468111321795`, 
+   1957.580345882884}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{59.6479965598681, 59.6479965598681}, {76.23854314030127,
+    76.23854314030127}}]], "Print",
+ CellChangeTimes->{3.673914852547748*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739148525519876`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "33"}],
+  SequenceForm["n  ", 33],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67391485255264*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "84.`"}]}],
+  SequenceForm["fixed point ~ ", -84.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673914852553248*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], PointBox[CompressedData["
+1:eJwBQQG+/iFib1JlAgAAABMAAAACAAAAf/PGmuFZCEAizWjEOuIOQNUXLQhA
+VFTA/gaQumHIWcCjM5iOp7VkwDOqoaXqQ2rAW9sZGS9Bb8BzqP020tFzwIrB
+zVFb5nTAzXsqG6+BesBmlQ4XHyx6wJSnq//FmIDAQmlP3OJxf8BAEcJxtPCD
+wI8eyFDTW4LA7XrY46JIh8B9iGgztf6EwJrk7lWRoIrAa/IIFpehh8BHTgXI
+f/iNwFlcqfh4RIrA+tsNHTeokMBIxknbWueMwNEQGVYuVJLANjDqvTyKj8Cn
+RSSPJQCUwBJNRVCPFpHAfXovyByslcAJgpVBAGiSwFSvOgEUWJfAALflMnG5
+k8Aq5EU6CwSZwPfrNSTiCpXAARlRcwKwmsDuIIYVU1yWwNdNXKz5W5zA5VXW
+BsStl8Cugmfl8AeewJtinPU=
+       "]]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwBQQG+/iFib1JlAgAAABMAAAACAAAAf/PGmuFZCEAizWjEOuIOQNUXLQhA
+VFTA/gaQumHIWcCjM5iOp7VkwDOqoaXqQ2rAW9sZGS9Bb8BzqP020tFzwIrB
+zVFb5nTAzXsqG6+BesBmlQ4XHyx6wJSnq//FmIDAQmlP3OJxf8BAEcJxtPCD
+wI8eyFDTW4LA7XrY46JIh8B9iGgztf6EwJrk7lWRoIrAa/IIFpehh8BHTgXI
+f/iNwFlcqfh4RIrA+tsNHTeokMBIxknbWueMwNEQGVYuVJLANjDqvTyKj8Cn
+RSSPJQCUwBJNRVCPFpHAfXovyByslcAJgpVBAGiSwFSvOgEUWJfAALflMnG5
+k8Aq5EU6CwSZwPfrNSTiCpXAARlRcwKwmsDuIIYVU1yWwNdNXKz5W5zA5VXW
+BsStl8Cugmfl8AeewJtinPU=
+       "]]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1515.4414323320318`, 3.0438873378720355`}, {-1921.9852501081, 
+   3.8604636520846194`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{30.36970639339808, 30.36970639339808}, {
+   38.516914275203696`, 38.516914275203696`}}]], "Print",
+ CellChangeTimes->{3.6739149763971853`*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739149764008837`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "34"}],
+  SequenceForm["n  ", 34],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673914976401422*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "86.`"}]}],
+  SequenceForm["fixed point ~ ", -86.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673914976401918*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.0402893734810355`, 3.9024499081437423`}, {
+       83.90408320838684, 
+       107.69747270292083`}, {-170.84845579025472`, -219.29739531398542`}, {
+       257.7928283721226, 
+       330.89731792505}, {-344.73720095399045`, -442.4972405361146}, {
+       431.6815735358583, 
+       554.0971631471791}, {-518.6259461177262, -665.6970857582437}, {
+       605.570318699594, 
+       777.2970083693083}, {-692.514691281462, -888.8969309803729}, {
+       779.4590638633299, 
+       1000.4968535914375`}, {-866.4034364451977, -1112.096776202502}, {
+       953.3478090270656, 
+       1223.6966988135666`}, {-1040.2921816089336`, -1335.2966214246312`}, {
+       1127.2365541908014`, 
+       1446.8965440356958`}, {-1214.1809267726692`, -1558.4964666467604`}, {
+       1301.1252993545372`, 
+       1670.096389257825}, {-1388.069671936405, -1781.6963118688896`}, {
+       1475.0140445182728`, 1893.2962344799541`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.0402893734810355`, 3.9024499081437423`}, {83.90408320838684,
+        107.69747270292083`}, {-170.84845579025472`, -219.29739531398542`}, {
+       257.7928283721226, 
+       330.89731792505}, {-344.73720095399045`, -442.4972405361146}, {
+       431.6815735358583, 
+       554.0971631471791}, {-518.6259461177262, -665.6970857582437}, {
+       605.570318699594, 
+       777.2970083693083}, {-692.514691281462, -888.8969309803729}, {
+       779.4590638633299, 
+       1000.4968535914375`}, {-866.4034364451977, -1112.096776202502}, {
+       953.3478090270656, 
+       1223.6966988135666`}, {-1040.2921816089336`, -1335.2966214246312`}, {
+       1127.2365541908014`, 
+       1446.8965440356958`}, {-1214.1809267726692`, -1558.4964666467604`}, {
+       1301.1252993545372`, 
+       1670.096389257825}, {-1388.069671936405, -1781.6963118688896`}, {
+       1475.0140445182728`, 1893.2962344799541`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1388.069671936405, 
+   1475.0140445182728`}, {-1781.6963118688896`, 1893.2962344799541`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{57.26167432909356, 57.26167432909356}, {
+   73.49985092697688, 73.49985092697688}}]], "Print",
+ CellChangeTimes->{3.673915093324567*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739150933285103`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "35"}],
+  SequenceForm["n  ", 35],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915093329054*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "88.`"}]}],
+  SequenceForm["fixed point ~ ", -88.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739150933295527`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.077476698862521, 
+       3.89030120689696}, {-87.96049641917332, -111.19266167157171`}, \
+{-178.99846953720916`, -226.2756245500404}, {-270.036442655245, \
+-341.35858742850905`}, {-361.07441577328086`, -456.4415503069777}, \
+{-452.1123888913167, -571.5245131854464}, {-543.1503620093525, \
+-686.6074760639151}, {-634.1883351273883, -801.6904389423837}, \
+{-725.2263082454242, -916.7734018208524}, {-816.26428136346, \
+-1031.8563646993211`}, {-907.3022544814959, -1146.9393275777898`}, \
+{-998.3402275995318, -1262.0222904562584`}, {-1089.3782007175676`, \
+-1377.105253334727}, {-1180.4161738356033`, -1492.1882162131958`}, \
+{-1271.4541469536393`, -1607.2711790916644`}, {-1362.4921200716751`, \
+-1722.354141970133}, {-1453.530093189711, -1837.4371048486018`}, \
+{-1544.5680663077467`, -1952.5200677270705`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.077476698862521, 
+       3.89030120689696}, {-87.96049641917332, -111.19266167157171`}, \
+{-178.99846953720916`, -226.2756245500404}, {-270.036442655245, \
+-341.35858742850905`}, {-361.07441577328086`, -456.4415503069777}, \
+{-452.1123888913167, -571.5245131854464}, {-543.1503620093525, \
+-686.6074760639151}, {-634.1883351273883, -801.6904389423837}, \
+{-725.2263082454242, -916.7734018208524}, {-816.26428136346, \
+-1031.8563646993211`}, {-907.3022544814959, -1146.9393275777898`}, \
+{-998.3402275995318, -1262.0222904562584`}, {-1089.3782007175676`, \
+-1377.105253334727}, {-1180.4161738356033`, -1492.1882162131958`}, \
+{-1271.4541469536393`, -1607.2711790916644`}, {-1362.4921200716751`, \
+-1722.354141970133}, {-1453.530093189711, -1837.4371048486018`}, \
+{-1544.5680663077467`, -1952.5200677270705`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1544.5680663077467`, 
+   3.077476698862521}, {-1952.5200677270705`, 3.89030120689696}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{30.952910860132185`, 30.952910860132185`}, {
+   39.12820737867935, 39.12820737867935}}]], "Print",
+ CellChangeTimes->{3.673915209439831*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915209442624*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "36"}],
+  SequenceForm["n  ", 36],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739152094431677`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "90.`"}]}],
+  SequenceForm["fixed point ~ ", -90.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915209443665*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.0924399023872096`, 3.906391301753225}, {91.28353920215334, 
+       115.30999301143159`}, {-185.65951830669388`, -234.5263773246164}, {
+       280.0354974112345, 
+       353.7427616378012}, {-374.411476515775, -472.959145950986}, {
+       468.78745562031554`, 
+       592.1755302641708}, {-563.1634347248561, -711.3919145773556}, {
+       657.5394138293966, 
+       830.6082988905404}, {-751.9153929339373, -949.8246832037253}, {
+       846.2913720384778, 
+       1069.04106751691}, {-940.6673511430183, -1188.2574518300949`}, {
+       1035.043330247559, 
+       1307.4738361432796`}, {-1129.4193093520994`, -1426.6902204564644`}, {
+       1223.79528845664, 
+       1545.9066047696492`}, {-1318.1712675611805`, -1665.122989082834}, {
+       1412.547246665721, 
+       1784.3393733960188`}, {-1506.9232257702615`, -1903.5557577092036`}}]}, \
+{}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.0924399023872096`, 3.906391301753225}, {91.28353920215334, 
+       115.30999301143159`}, {-185.65951830669388`, -234.5263773246164}, {
+       280.0354974112345, 
+       353.7427616378012}, {-374.411476515775, -472.959145950986}, {
+       468.78745562031554`, 
+       592.1755302641708}, {-563.1634347248561, -711.3919145773556}, {
+       657.5394138293966, 
+       830.6082988905404}, {-751.9153929339373, -949.8246832037253}, {
+       846.2913720384778, 
+       1069.04106751691}, {-940.6673511430183, -1188.2574518300949`}, {
+       1035.043330247559, 
+       1307.4738361432796`}, {-1129.4193093520994`, -1426.6902204564644`}, {
+       1223.79528845664, 
+       1545.9066047696492`}, {-1318.1712675611805`, -1665.122989082834}, {
+       1412.547246665721, 
+       1784.3393733960188`}, {-1506.9232257702615`, \
+-1903.5557577092036`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1506.9232257702615`, 
+   1412.547246665721}, {-1903.5557577092036`, 1784.3393733960188`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{58.389409448719654`, 58.389409448719654`}, {
+   73.75790262210445, 73.75790262210445}}]], "Print",
+ CellChangeTimes->{3.673915321875463*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915321879496*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "37"}],
+  SequenceForm["n  ", 37],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915321880081*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "92.`"}]}],
+  SequenceForm["fixed point ~ ", -92.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739153218806*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.1141285227149487`, 
+       3.912916976082754}, {-94.90619282136127, -119.25007279478943`}, \
+{-192.92651416543748`, -242.41306256566162`}, {-290.9468355095137, \
+-365.5760523365338}, {-388.9671568535899, -488.73904210740596`}, \
+{-486.9874781976661, -611.9020318782782}, {-585.0077995417423, \
+-735.0650216491504}, {-683.0281208858186, -858.2280114200225}, \
+{-781.0484422298948, -981.3910011908947}, {-879.068763573971, \
+-1104.5539909617669`}, {-977.0890849180472, -1227.716980732639}, \
+{-1075.1094062621235`, -1350.8799705035112`}, {-1173.1297276061996`, \
+-1474.0429602743834`}, {-1271.150048950276, -1597.2059500452556`}, \
+{-1369.170370294352, -1720.3689398161277`}, {-1467.1906916384282`, \
+-1843.531929587}, {-1565.2110129825046`, -1966.694919357872}}]}, {}}, {}}, \
+{{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.1141285227149487`, 
+       3.912916976082754}, {-94.90619282136127, -119.25007279478943`}, \
+{-192.92651416543748`, -242.41306256566162`}, {-290.9468355095137, \
+-365.5760523365338}, {-388.9671568535899, -488.73904210740596`}, \
+{-486.9874781976661, -611.9020318782782}, {-585.0077995417423, \
+-735.0650216491504}, {-683.0281208858186, -858.2280114200225}, \
+{-781.0484422298948, -981.3910011908947}, {-879.068763573971, \
+-1104.5539909617669`}, {-977.0890849180472, -1227.716980732639}, \
+{-1075.1094062621235`, -1350.8799705035112`}, {-1173.1297276061996`, \
+-1474.0429602743834`}, {-1271.150048950276, -1597.2059500452556`}, \
+{-1369.170370294352, -1720.3689398161277`}, {-1467.1906916384282`, \
+-1843.531929587}, {-1565.2110129825046`, -1966.694919357872}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1565.2110129825046`, 
+   3.1141285227149487`}, {-1966.694919357872, 3.912916976082754}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{31.36650283010439, 31.36650283010439}, {
+   39.41215672667909, 39.41215672667909}}]], "Print",
+ CellChangeTimes->{3.6739154335196657`*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915433522731*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "38"}],
+  SequenceForm["n  ", 38],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915433523321*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "94.`"}]}],
+  SequenceForm["fixed point ~ ", -94.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915433523847*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.126789441007233, 3.9305160376118238`}, {98.2295885788064, 
+       123.47904473946211`}, {-199.58596659862005`, -250.88860551653605`}, {
+       300.9423446184337, 
+       378.29816629361}, {-402.29872263824734`, -505.7077270706839}, {
+       503.655100658061, 
+       633.1172878477578}, {-605.0114786778746, -760.5268486248318}, {
+       706.3678566976882, 
+       887.9364094019057}, {-807.7242347175019, -1015.3459701789797`}, {
+       909.0806127373155, 
+       1142.7555309560535`}, {-1010.4369907571291`, -1270.1650917331274`}, {
+       1111.7933687769428`, 
+       1397.5746525102013`}, {-1213.1497467967565`, -1524.9842132872755`}, {
+       1314.50612481657, 
+       1652.3937740643494`}, {-1415.8625028363838`, -1779.8033348414233`}, {
+       1517.2188808561973`, 1907.2128956184972`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.126789441007233, 3.9305160376118238`}, {98.2295885788064, 
+       123.47904473946211`}, {-199.58596659862005`, -250.88860551653605`}, {
+       300.9423446184337, 
+       378.29816629361}, {-402.29872263824734`, -505.7077270706839}, {
+       503.655100658061, 
+       633.1172878477578}, {-605.0114786778746, -760.5268486248318}, {
+       706.3678566976882, 
+       887.9364094019057}, {-807.7242347175019, -1015.3459701789797`}, {
+       909.0806127373155, 
+       1142.7555309560535`}, {-1010.4369907571291`, -1270.1650917331274`}, {
+       1111.7933687769428`, 
+       1397.5746525102013`}, {-1213.1497467967565`, -1524.9842132872755`}, {
+       1314.50612481657, 
+       1652.3937740643494`}, {-1415.8625028363838`, -1779.8033348414233`}, {
+       1517.2188808561973`, 1907.2128956184972`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1415.8625028363838`, 
+   1517.2188808561973`}, {-1779.8033348414233`, 1907.2128956184972`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{58.66162767385162, 58.66162767385162}, {
+   73.74032460919841, 73.74032460919841}}]], "Print",
+ CellChangeTimes->{3.673915532891283*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915532895364*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "39"}],
+  SequenceForm["n  ", 39],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915532895952*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "96.`"}]}],
+  SequenceForm["fixed point ~ ", -96.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915532896474*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.138998559777218, 
+       3.9479859853117025`}, {-101.5711083359942, -127.74816699869457`}, \
+{-206.28121523176563`, -259.44431998270085`}, {-310.99132212753705`, \
+-391.14047296670714`}, {-415.70142902330844`, -522.8366259507134}, \
+{-520.4115359190798, -654.5327789347197}, {-625.1216428148513, \
+-786.228931918726}, {-729.8317497106227, -917.9250849027322}, \
+{-834.5418566063942, -1049.6212378867385`}, {-939.2519635021656, \
+-1181.3173908707447`}, {-1043.962070397937, -1313.013543854751}, \
+{-1148.6721772937085`, -1444.7096968387573`}, {-1253.3822841894798`, \
+-1576.4058498227635`}, {-1358.0923910852512`, -1708.1020028067699`}, \
+{-1462.8024979810227`, -1839.798155790776}, {-1567.512604876794, \
+-1971.4943087747824`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.138998559777218, 
+       3.9479859853117025`}, {-101.5711083359942, -127.74816699869457`}, \
+{-206.28121523176563`, -259.44431998270085`}, {-310.99132212753705`, \
+-391.14047296670714`}, {-415.70142902330844`, -522.8366259507134}, \
+{-520.4115359190798, -654.5327789347197}, {-625.1216428148513, \
+-786.228931918726}, {-729.8317497106227, -917.9250849027322}, \
+{-834.5418566063942, -1049.6212378867385`}, {-939.2519635021656, \
+-1181.3173908707447`}, {-1043.962070397937, -1313.013543854751}, \
+{-1148.6721772937085`, -1444.7096968387573`}, {-1253.3822841894798`, \
+-1576.4058498227635`}, {-1358.0923910852512`, -1708.1020028067699`}, \
+{-1462.8024979810227`, -1839.798155790776}, {-1567.512604876794, \
+-1971.4943087747824`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1567.512604876794, 3.138998559777218}, {-1971.4943087747824`, 
+   3.9479859853117025`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{31.41303206873143, 31.41303206873143}, {
+   39.50884589520189, 39.50884589520189}}]], "Print",
+ CellChangeTimes->{3.6739156285713453`*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739156285743017`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "40"}],
+  SequenceForm["n  ", 40],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915628574849*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "98.`"}]}],
+  SequenceForm["fixed point ~ ", -98.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739156285753517`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.1635387110791147`, 3.9487010545643586`}, {
+       105.4630425804285, 
+       131.6380374915189}, {-214.08962387193614`, -267.22477603760217`}, {
+       322.71620516344376`, 
+       402.81151458368544`}, {-431.3427864549514, -538.3982531297687}, {
+       539.969367746459, 
+       673.9849916758519}, {-648.5959490379666, -809.5717302219352}, {
+       757.2225303294742, 
+       945.1584687680185}, {-865.849111620982, -1080.7452073141017`}, {
+       974.4756929124895, 
+       1216.331945860185}, {-1083.1022742039972`, -1351.9186844062683`}, {
+       1191.7288554955048`, 
+       1487.5054229523516`}, {-1300.3554367870124`, -1623.0921614984347`}, {
+       1408.98201807852, 
+       1758.678900044518}, {-1517.6085993700276`, -1894.2656385906014`}}]}, \
+{}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.1635387110791147`, 3.9487010545643586`}, {105.4630425804285,
+        131.6380374915189}, {-214.08962387193614`, -267.22477603760217`}, {
+       322.71620516344376`, 
+       402.81151458368544`}, {-431.3427864549514, -538.3982531297687}, {
+       539.969367746459, 
+       673.9849916758519}, {-648.5959490379666, -809.5717302219352}, {
+       757.2225303294742, 
+       945.1584687680185}, {-865.849111620982, -1080.7452073141017`}, {
+       974.4756929124895, 
+       1216.331945860185}, {-1083.1022742039972`, -1351.9186844062683`}, {
+       1191.7288554955048`, 
+       1487.5054229523516`}, {-1300.3554367870124`, -1623.0921614984347`}, {
+       1408.98201807852, 
+       1758.678900044518}, {-1517.6085993700276`, -1894.2656385906014`}}]}}, \
+{}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1517.6085993700276`, 1408.98201807852}, {-1894.2656385906014`,
+    1758.678900044518}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{58.53181234897095, 58.53181234897095}, {
+   73.05889077270238, 73.05889077270238}}]], "Print",
+ CellChangeTimes->{3.673915720835162*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915720839107*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "41"}],
+  SequenceForm["n  ", 41],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915720839684*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "100.`"}]}],
+  SequenceForm["fixed point ~ ", -100.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915720840186*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.1908477244496143`, 
+       3.9451202659849036`}, {-109.53807760877976`, -135.43137347488548`}, \
+{-222.26700294200913`, -274.8078672157559}, {-334.9959282752385, \
+-414.1843609566263}, {-447.72485360846787`, -553.5608546974967}, \
+{-560.4537789416972, -692.937348438367}, {-673.1827042749267, \
+-832.3138421792374}, {-785.911629608156, -971.6903359201078}, \
+{-898.6405549413854, -1111.0668296609783`}, {-1011.3694802746147`, \
+-1250.4433234018486`}, {-1124.0984056078441`, -1389.819817142719}, \
+{-1236.8273309410736`, -1529.1963108835894`}, {-1349.5562562743028`, \
+-1668.5728046244599`}, {-1462.2851816075322`, -1807.9492983653302`}, \
+{-1575.0141069407616`, -1947.3257921062007`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.1908477244496143`, 
+       3.9451202659849036`}, {-109.53807760877976`, -135.43137347488548`}, \
+{-222.26700294200913`, -274.8078672157559}, {-334.9959282752385, \
+-414.1843609566263}, {-447.72485360846787`, -553.5608546974967}, \
+{-560.4537789416972, -692.937348438367}, {-673.1827042749267, \
+-832.3138421792374}, {-785.911629608156, -971.6903359201078}, \
+{-898.6405549413854, -1111.0668296609783`}, {-1011.3694802746147`, \
+-1250.4433234018486`}, {-1124.0984056078441`, -1389.819817142719}, \
+{-1236.8273309410736`, -1529.1963108835894`}, {-1349.5562562743028`, \
+-1668.5728046244599`}, {-1462.2851816075322`, -1807.9492983653302`}, \
+{-1575.0141069407616`, -1947.3257921062007`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1575.0141069407616`, 
+   3.1908477244496143`}, {-1947.3257921062007`, 3.9451202659849036`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{31.564099093304225`, 31.564099093304225`}, {
+   39.02541824744372, 39.02541824744372}}]], "Print",
+ CellChangeTimes->{3.673915812455976*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915812458932*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "42"}],
+  SequenceForm["n  ", 42],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915812459531*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "102.`"}]}],
+  SequenceForm["fixed point ~ ", -102.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915812460065*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.1935936643779126`, 3.9730387681986383`}, {
+       112.59924338341322`, 
+       140.0808012058971}, {-228.39208043120436`, -284.1346411799928}, {
+       344.1849174789955, 
+       428.18848115408855`}, {-459.97775452678667`, -572.2423211281842}, {
+       575.7705915745778, 
+       716.29616110228}, {-691.563428622369, -860.3500010763757}, {
+       807.35626567016, 
+       1004.4038410504714`}, {-923.1491027179512, -1148.4576810245671`}, {
+       1038.9419397657423`, 
+       1292.511520998663}, {-1154.7347768135335`, -1436.5653609727588`}, {
+       1270.5276138613247`, 
+       1580.6192009468543`}, {-1386.3204509091158`, -1724.6730409209501`}, {
+       1502.1132879569068`, 1868.7268808950457`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.1935936643779126`, 3.9730387681986383`}, {
+       112.59924338341322`, 
+       140.0808012058971}, {-228.39208043120436`, -284.1346411799928}, {
+       344.1849174789955, 
+       428.18848115408855`}, {-459.97775452678667`, -572.2423211281842}, {
+       575.7705915745778, 
+       716.29616110228}, {-691.563428622369, -860.3500010763757}, {
+       807.35626567016, 
+       1004.4038410504714`}, {-923.1491027179512, -1148.4576810245671`}, {
+       1038.9419397657423`, 
+       1292.511520998663}, {-1154.7347768135335`, -1436.5653609727588`}, {
+       1270.5276138613247`, 
+       1580.6192009468543`}, {-1386.3204509091158`, -1724.6730409209501`}, {
+       1502.1132879569068`, 1868.7268808950457`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1386.3204509091158`, 
+   1502.1132879569068`}, {-1724.6730409209501`, 1868.7268808950457`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{57.76867477732045, 57.76867477732045}, {
+   71.86799843631992, 71.86799843631992}}]], "Print",
+ CellChangeTimes->{3.673915897861226*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673915897865137*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "43"}],
+  SequenceForm["n  ", 43],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915897865685*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "104.`"}]}],
+  SequenceForm["fixed point ~ ", -104.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739158978662233`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.2108416589285658`, 
+       3.9814038426335006`}, {-116.3304132451535, -144.24826992681716`}, \
+{-235.87166814923555`, -292.47794369626786`}, {-355.4129230533176, \
+-440.7076174657185}, {-474.9541779573997, -588.9372912351691}, \
+{-594.4954328614817, -737.1669650046199}, {-714.0366877655638, \
+-885.3966387740705}, {-833.5779426696458, -1033.6263125435212`}, \
+{-953.1191975737279, -1181.855986312972}, {-1072.66045247781, \
+-1330.0856600824225`}, {-1192.201707381892, -1478.3153338518732`}, \
+{-1311.742962285974, -1626.545007621324}, {-1431.284217190056, \
+-1774.7746813907745`}, {-1550.8254720941381`, -1923.0043551602253`}}]}, {}}, \
+{}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.2108416589285658`, 
+       3.9814038426335006`}, {-116.3304132451535, -144.24826992681716`}, \
+{-235.87166814923555`, -292.47794369626786`}, {-355.4129230533176, \
+-440.7076174657185}, {-474.9541779573997, -588.9372912351691}, \
+{-594.4954328614817, -737.1669650046199}, {-714.0366877655638, \
+-885.3966387740705}, {-833.5779426696458, -1033.6263125435212`}, \
+{-953.1191975737279, -1181.855986312972}, {-1072.66045247781, \
+-1330.0856600824225`}, {-1192.201707381892, -1478.3153338518732`}, \
+{-1311.742962285974, -1626.545007621324}, {-1431.284217190056, \
+-1774.7746813907745`}, {-1550.8254720941381`, -1923.0043551602253`}}]}}, {}}},
+  
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1550.8254720941381`, 
+   3.2108416589285658`}, {-1923.0043551602253`, 3.9814038426335006`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{31.080726275061334`, 31.080726275061334`}, {
+   38.53971518005717, 38.53971518005717}}]], "Print",
+ CellChangeTimes->{3.673915982656046*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.67391598265888*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "44"}],
+  SequenceForm["n  ", 44],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739159826594267`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "106.`"}]}],
+  SequenceForm["fixed point ~ ", -106.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673915982659934*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.2343322357271886`, 3.9810435373010398`}, {
+       120.3985054328534, 
+       148.19494628893605`}, {-244.031343101434, -300.37093611517315`}, {
+       367.6641807700146, 
+       452.5469259414103}, {-491.29701843859516`, -604.7229157676474}, {
+       614.9298561071757, 
+       756.8989055938845}, {-738.5626937757563, -909.0748954201216}, {
+       862.195531444337, 
+       1061.2508852463586`}, {-985.8283691129176, -1213.4268750725957`}, {
+       1109.461206781498, 
+       1365.6028648988329`}, {-1233.0940444500786`, -1517.77885472507}, {
+       1356.7268821186594`, 
+       1669.9548445513071`}, {-1480.35971978724, -1822.130834377544}}]}, {}}, \
+{}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.2343322357271886`, 3.9810435373010398`}, {120.3985054328534,
+        148.19494628893605`}, {-244.031343101434, -300.37093611517315`}, {
+       367.6641807700146, 
+       452.5469259414103}, {-491.29701843859516`, -604.7229157676474}, {
+       614.9298561071757, 
+       756.8989055938845}, {-738.5626937757563, -909.0748954201216}, {
+       862.195531444337, 
+       1061.2508852463586`}, {-985.8283691129176, -1213.4268750725957`}, {
+       1109.461206781498, 
+       1365.6028648988329`}, {-1233.0940444500786`, -1517.77885472507}, {
+       1356.7268821186594`, 
+       1669.9548445513071`}, {-1480.35971978724, -1822.130834377544}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1480.35971978724, 1356.7268821186594`}, {-1822.130834377544, 
+   1669.9548445513071`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{56.74173203811799, 56.74173203811799}, {
+   69.84171357857701, 69.84171357857701}}]], "Print",
+ CellChangeTimes->{3.673916064080132*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673916064084202*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "45"}],
+  SequenceForm["n  ", 45],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916064084777*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "108.`"}]}],
+  SequenceForm["fixed point ~ ", -108.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916064085301*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.2466738670953337`, 
+       3.9946876930261084`}, {-123.99691827361788`, -152.5650507803964}, \
+{-251.24051041433108`, -309.1247892538189}, {-378.48410255504433`, \
+-465.6845277272414}, {-505.7276946957575, -622.2442662006639}, \
+{-632.9712868364708, -778.8040046740864}, {-760.214878977184, \
+-935.3637431475089}, {-887.4584711178971, -1091.9234816209314`}, \
+{-1014.7020632586103`, -1248.483220094354}, {-1141.9456553993236`, \
+-1405.0429585677764`}, {-1269.1892475400368`, -1561.602697041199}, \
+{-1396.43283968075, -1718.1624355146214`}, {-1523.6764318214632`, \
+-1874.722173988044}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.2466738670953337`, 
+       3.9946876930261084`}, {-123.99691827361788`, -152.5650507803964}, \
+{-251.24051041433108`, -309.1247892538189}, {-378.48410255504433`, \
+-465.6845277272414}, {-505.7276946957575, -622.2442662006639}, \
+{-632.9712868364708, -778.8040046740864}, {-760.214878977184, \
+-935.3637431475089}, {-887.4584711178971, -1091.9234816209314`}, \
+{-1014.7020632586103`, -1248.483220094354}, {-1141.9456553993236`, \
+-1405.0429585677764`}, {-1269.1892475400368`, -1561.602697041199}, \
+{-1396.43283968075, -1718.1624355146214`}, {-1523.6764318214632`, \
+-1874.722173988044}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1523.6764318214632`, 
+   3.2466738670953337`}, {-1874.722173988044, 3.9946876930261084`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{30.53846211377117, 30.53846211377117}, {
+   37.57433723362141, 37.57433723362141}}]], "Print",
+ CellChangeTimes->{3.673916144917499*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739161449212503`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "46"}],
+  SequenceForm["n  ", 46],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916144921855*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "110.`"}]}],
+  SequenceForm["fixed point ~ ", -110.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916144922391*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.272223964300739, 3.990529235841776}, {128.2756854502205, 
+       156.43424124428375`}, {-259.8235948647417, -316.8590117244093}, {
+       391.3715042792629, 
+       477.2837822045348}, {-522.9194136937841, -637.7085526846604}, {
+       654.4673231083054, 
+       798.1333231647859}, {-786.0152325228266, -958.5580936449114}, {
+       917.5631419373478, 
+       1118.982864125037}, {-1049.111051351869, -1279.4076346051625`}, {
+       1180.6589607663902`, 
+       1439.832405085288}, {-1312.2068701809114`, -1600.2571755654135`}, {
+       1443.7547795954326`, 
+       1760.6819460455392`}, {-1575.302689009954, -1921.1067165256648`}}]}, \
+{}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.272223964300739, 3.990529235841776}, {128.2756854502205, 
+       156.43424124428375`}, {-259.8235948647417, -316.8590117244093}, {
+       391.3715042792629, 
+       477.2837822045348}, {-522.9194136937841, -637.7085526846604}, {
+       654.4673231083054, 
+       798.1333231647859}, {-786.0152325228266, -958.5580936449114}, {
+       917.5631419373478, 
+       1118.982864125037}, {-1049.111051351869, -1279.4076346051625`}, {
+       1180.6589607663902`, 
+       1439.832405085288}, {-1312.2068701809114`, -1600.2571755654135`}, {
+       1443.7547795954326`, 
+       1760.6819460455392`}, {-1575.302689009954, -1921.1067165256648`}}]}}, \
+{}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1575.302689009954, 
+   1443.7547795954326`}, {-1921.1067165256648`, 1760.6819460455392`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{60.38114937210774, 60.38114937210774}, {
+   73.63577325142408, 73.63577325142408}}]], "Print",
+ CellChangeTimes->{3.673916225158485*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673916225162592*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "47"}],
+  SequenceForm["n  ", 47],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916225163162*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "112.`"}]}],
+  SequenceForm["fixed point ~ ", -112.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67391622516367*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.272991618791242, 
+       4.018245760578726}, {-131.38137214138143`, -161.29666773210084`}, \
+{-266.03573590155406`, -326.6115812247804}, {-400.6900996617267, \
+-491.92649471746}, {-535.3444634218994, -657.2414082101395}, \
+{-669.9988271820721, -822.5563217028191}, {-804.6531909422447, \
+-987.8712351954987}, {-939.3075547024174, -1153.1861486881783`}, \
+{-1073.9619184625901`, -1318.5010621808578`}, {-1208.6162822227627`, \
+-1483.8159756735374`}, {-1343.2706459829353`, -1649.130889166217}, \
+{-1477.9250097431081`, -1814.4458026588966`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.272991618791242, 
+       4.018245760578726}, {-131.38137214138143`, -161.29666773210084`}, \
+{-266.03573590155406`, -326.6115812247804}, {-400.6900996617267, \
+-491.92649471746}, {-535.3444634218994, -657.2414082101395}, \
+{-669.9988271820721, -822.5563217028191}, {-804.6531909422447, \
+-987.8712351954987}, {-939.3075547024174, -1153.1861486881783`}, \
+{-1073.9619184625901`, -1318.5010621808578`}, {-1208.6162822227627`, \
+-1483.8159756735374`}, {-1343.2706459829353`, -1649.130889166217}, \
+{-1477.9250097431081`, -1814.4458026588966`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1477.9250097431081`, 
+   3.272991618791242}, {-1814.4458026588966`, 4.018245760578726}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{29.623960027237985`, 29.623960027237985`}, {
+   36.36928096838951, 36.36928096838951}}]], "Print",
+ CellChangeTimes->{3.67391629663892*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.673916296642555*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "48"}],
+  SequenceForm["n  ", 48],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739162966431303`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "114.`"}]}],
+  SequenceForm["fixed point ~ ", -114.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916296643653*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.2936136263561244`, 4.019537833188242}, {
+       135.51120864733633`, 
+       165.37836302968307`}, {-274.3160309210288, -334.77626389255437`}, {
+       413.1208531947213, 
+       504.17416475542564`}, {-551.9256754684137, -673.572065618297}, {
+       690.7304977421062, 
+       842.9699664811683}, {-829.5353200157987, -1012.3678673440396`}, {
+       968.3401422894912, 
+       1181.765768206911}, {-1107.1449645631835`, -1351.1636690697821`}, {
+       1245.949786836876, 
+       1520.5615699326534`}, {-1384.7546091105685`, -1689.9594707955248`}, {
+       1523.559431384261, 1859.357371658396}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.2936136263561244`, 4.019537833188242}, {135.51120864733633`,
+        165.37836302968307`}, {-274.3160309210288, -334.77626389255437`}, {
+       413.1208531947213, 
+       504.17416475542564`}, {-551.9256754684137, -673.572065618297}, {
+       690.7304977421062, 
+       842.9699664811683}, {-829.5353200157987, -1012.3678673440396`}, {
+       968.3401422894912, 
+       1181.765768206911}, {-1107.1449645631835`, -1351.1636690697821`}, {
+       1245.949786836876, 
+       1520.5615699326534`}, {-1384.7546091105685`, -1689.9594707955248`}, {
+       1523.559431384261, 1859.357371658396}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1384.7546091105685`, 
+   1523.559431384261}, {-1689.9594707955248`, 1859.357371658396}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{58.16628080989659, 58.16628080989659}, {
+   70.98633684907841, 70.98633684907841}}]], "Print",
+ CellChangeTimes->{3.673916367620193*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739163676241493`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "49"}],
+  SequenceForm["n  ", 49],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67391636762471*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "116.`"}]}],
+  SequenceForm["fixed point ~ ", -116.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916367625223*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.31645549028003, 
+       4.017429135010629}, {-139.81231104612422`, -169.3633620219161}, \
+{-282.94107758252846`, -342.7441531788428}, {-426.0698441189327, \
+-516.1249443357696}, {-569.1986106553369, -689.5057354926962}, \
+{-712.3273771917412, -862.886526649623}, {-855.4561437281454, \
+-1036.2673178065497`}, {-998.5849102645496, -1209.6481089634763`}, \
+{-1141.7136768009539`, -1383.028900120403}, {-1284.8424433373582`, \
+-1556.4096912773298`}, {-1427.9712098737623`, -1729.7904824342565`}, \
+{-1571.0999764101666`, -1903.1712735911833`}}]}, {}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.31645549028003, 
+       4.017429135010629}, {-139.81231104612422`, -169.3633620219161}, \
+{-282.94107758252846`, -342.7441531788428}, {-426.0698441189327, \
+-516.1249443357696}, {-569.1986106553369, -689.5057354926962}, \
+{-712.3273771917412, -862.886526649623}, {-855.4561437281454, \
+-1036.2673178065497`}, {-998.5849102645496, -1209.6481089634763`}, \
+{-1141.7136768009539`, -1383.028900120403}, {-1284.8424433373582`, \
+-1556.4096912773298`}, {-1427.9712098737623`, -1729.7904824342565`}, \
+{-1571.0999764101666`, -1903.1712735911833`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1571.0999764101666`, 3.31645549028003}, {-1903.1712735911833`,
+    4.017429135010629}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{31.488328638008934`, 31.488328638008934`}, {
+   38.14377405452388, 38.14377405452388}}]], "Print",
+ CellChangeTimes->{3.673916438067596*^9}],
+
+Cell[BoxData["\<\"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\
+&&&&&&&&&&&&&&&\"\>"], "Print",
+ CellChangeTimes->{3.6739164380703917`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n  \"\>", "\[InvisibleSpace]", "50"}],
+  SequenceForm["n  ", 50],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.67391643807094*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"fixed point ~ \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "118.`"}]}],
+  SequenceForm["fixed point ~ ", -118.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6739164380714483`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[1, 0, 0], PointSize[0.011], 
+      PointBox[{{3.3321411002887005`, 4.024209817331239}, {143.7901061042099, 
+       173.654578003773}, {-290.91235330870853`, -351.33336582487726`}, {
+       438.0346005132072, 
+       529.0121536459815}, {-585.1568477177058, -706.6909414670857}, {
+       732.2790949222044, 
+       884.36972928819}, {-879.4013421267031, -1062.0485171092942`}, {
+       1026.5235893312017`, 
+       1239.7273049303985`}, {-1173.6458365357003`, -1417.4060927515027`}, {
+       1320.768083740199, 
+       1595.0848805726068`}, {-1467.8903309446976`, -1772.7636683937112`}}]}, \
+{}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+      LineBox[{{3.3321411002887005`, 4.024209817331239}, {143.7901061042099, 
+       173.654578003773}, {-290.91235330870853`, -351.33336582487726`}, {
+       438.0346005132072, 
+       529.0121536459815}, {-585.1568477177058, -706.6909414670857}, {
+       732.2790949222044, 
+       884.36972928819}, {-879.4013421267031, -1062.0485171092942`}, {
+       1026.5235893312017`, 
+       1239.7273049303985`}, {-1173.6458365357003`, -1417.4060927515027`}, {
+       1320.768083740199, 
+       1595.0848805726068`}, {-1467.8903309446976`, \
+-1772.7636683937112`}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0.},
+  Method->{},
+  PlotRange->{{-1467.8903309446976`, 
+   1320.768083740199}, {-1772.7636683937112`, 1595.0848805726068`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{55.77316829369793, 55.77316829369793}, {
+   67.35697097932636, 67.35697097932636}}]], "Print",
+ CellChangeTimes->{3.673916505356492*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"elasped seconds   \"\>", "\[InvisibleSpace]", 
+   "1778.877836`9.400661121872737"}],
+  SequenceForm["elasped seconds   ", 1778.877836`9.400661121872737],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.673916505360528*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{3.673917917095788*^9}]
+},
+WindowSize->{851, 915},
+WindowMargins->{{Automatic, 312}, {Automatic, 50}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 161, 3, 28, "Input",
+ InitializationCell->True],
+Cell[743, 27, 1824, 27, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2604, 59, 1226, 33, 131, "Input",
+ InitializationCell->True],
+Cell[3833, 94, 1940, 28, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5810, 127, 9193, 228, 1015, "Input"],
+Cell[CellGroupData[{
+Cell[15028, 359, 153, 2, 21, "Print"],
+Cell[15184, 363, 184, 5, 21, "Print"],
+Cell[15371, 370, 249, 6, 22, "Print"],
+Cell[15623, 378, 1603, 32, 231, "Print"],
+Cell[17229, 412, 153, 2, 21, "Print"],
+Cell[17385, 416, 183, 5, 21, "Print"],
+Cell[17571, 423, 251, 6, 22, "Print"],
+Cell[17825, 431, 1595, 32, 231, "Print"],
+Cell[19423, 465, 153, 2, 21, "Print"],
+Cell[19579, 469, 184, 5, 21, "Print"],
+Cell[19766, 476, 251, 6, 22, "Print"],
+Cell[20020, 484, 1600, 32, 231, "Print"],
+Cell[21623, 518, 153, 2, 21, "Print"],
+Cell[21779, 522, 184, 5, 21, "Print"],
+Cell[21966, 529, 251, 6, 22, "Print"],
+Cell[22220, 537, 1590, 32, 228, "Print"],
+Cell[23813, 571, 155, 2, 21, "Print"],
+Cell[23971, 575, 184, 5, 21, "Print"],
+Cell[24158, 582, 250, 6, 22, "Print"],
+Cell[24411, 590, 1598, 32, 231, "Print"],
+Cell[26012, 624, 153, 2, 21, "Print"],
+Cell[26168, 628, 184, 5, 21, "Print"],
+Cell[26355, 635, 253, 6, 22, "Print"],
+Cell[26611, 643, 1593, 32, 231, "Print"],
+Cell[28207, 677, 153, 2, 21, "Print"],
+Cell[28363, 681, 184, 5, 21, "Print"],
+Cell[28550, 688, 251, 6, 22, "Print"],
+Cell[28804, 696, 1590, 32, 231, "Print"],
+Cell[30397, 730, 155, 2, 21, "Print"],
+Cell[30555, 734, 184, 5, 21, "Print"],
+Cell[30742, 741, 251, 6, 22, "Print"],
+Cell[30996, 749, 1596, 32, 230, "Print"],
+Cell[32595, 783, 153, 2, 21, "Print"],
+Cell[32751, 787, 186, 5, 21, "Print"],
+Cell[32940, 794, 231, 6, 22, "Print"],
+Cell[33174, 802, 1593, 32, 231, "Print"],
+Cell[34770, 836, 153, 2, 21, "Print"],
+Cell[34926, 840, 186, 5, 21, "Print"],
+Cell[35115, 847, 231, 6, 22, "Print"],
+Cell[35349, 855, 1598, 32, 231, "Print"],
+Cell[36950, 889, 155, 2, 21, "Print"],
+Cell[37108, 893, 186, 5, 21, "Print"],
+Cell[37297, 900, 231, 6, 22, "Print"],
+Cell[37531, 908, 1596, 32, 231, "Print"],
+Cell[39130, 942, 153, 2, 21, "Print"],
+Cell[39286, 946, 188, 5, 21, "Print"],
+Cell[39477, 953, 231, 6, 22, "Print"],
+Cell[39711, 961, 1600, 32, 231, "Print"],
+Cell[41314, 995, 153, 2, 21, "Print"],
+Cell[41470, 999, 186, 5, 21, "Print"],
+Cell[41659, 1006, 231, 6, 22, "Print"],
+Cell[41893, 1014, 1592, 32, 227, "Print"],
+Cell[43488, 1048, 153, 2, 21, "Print"],
+Cell[43644, 1052, 185, 5, 21, "Print"],
+Cell[43832, 1059, 233, 6, 22, "Print"],
+Cell[44068, 1067, 1598, 32, 231, "Print"],
+Cell[45669, 1101, 153, 2, 21, "Print"],
+Cell[45825, 1105, 186, 5, 21, "Print"],
+Cell[46014, 1112, 233, 6, 22, "Print"],
+Cell[46250, 1120, 1592, 32, 236, "Print"],
+Cell[47845, 1154, 155, 2, 21, "Print"],
+Cell[48003, 1158, 185, 5, 21, "Print"],
+Cell[48191, 1165, 231, 6, 22, "Print"],
+Cell[48425, 1173, 1590, 32, 229, "Print"],
+Cell[50018, 1207, 153, 2, 21, "Print"],
+Cell[50174, 1211, 186, 5, 21, "Print"],
+Cell[50363, 1218, 233, 6, 22, "Print"],
+Cell[50599, 1226, 1590, 32, 231, "Print"],
+Cell[52192, 1260, 153, 2, 21, "Print"],
+Cell[52348, 1264, 186, 5, 21, "Print"],
+Cell[52537, 1271, 229, 6, 22, "Print"],
+Cell[52769, 1279, 1591, 32, 235, "Print"],
+Cell[54363, 1313, 153, 2, 21, "Print"],
+Cell[54519, 1317, 188, 5, 21, "Print"],
+Cell[54710, 1324, 231, 6, 22, "Print"],
+Cell[54944, 1332, 1600, 32, 231, "Print"],
+Cell[56547, 1366, 153, 2, 21, "Print"],
+Cell[56703, 1370, 186, 5, 21, "Print"],
+Cell[56892, 1377, 233, 6, 22, "Print"],
+Cell[57128, 1385, 1596, 32, 231, "Print"],
+Cell[58727, 1419, 276, 6, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59052, 1431, 9233, 227, 1015, "Input"],
+Cell[CellGroupData[{
+Cell[68310, 1662, 153, 2, 21, "Print"],
+Cell[68466, 1666, 186, 5, 21, "Print"],
+Cell[68655, 1673, 231, 6, 22, "Print"],
+Cell[68889, 1681, 1602, 32, 231, "Print"],
+Cell[70494, 1715, 153, 2, 21, "Print"],
+Cell[70650, 1719, 186, 5, 21, "Print"],
+Cell[70839, 1726, 233, 6, 22, "Print"],
+Cell[71075, 1734, 1593, 32, 231, "Print"],
+Cell[72671, 1768, 153, 2, 21, "Print"],
+Cell[72827, 1772, 186, 5, 21, "Print"],
+Cell[73016, 1779, 233, 6, 22, "Print"],
+Cell[73252, 1787, 1602, 32, 227, "Print"],
+Cell[74857, 1821, 153, 2, 21, "Print"],
+Cell[75013, 1825, 186, 5, 21, "Print"],
+Cell[75202, 1832, 231, 6, 22, "Print"],
+Cell[75436, 1840, 1597, 32, 227, "Print"],
+Cell[77036, 1874, 153, 2, 21, "Print"],
+Cell[77192, 1878, 185, 5, 21, "Print"],
+Cell[77380, 1885, 231, 6, 22, "Print"],
+Cell[77614, 1893, 1596, 32, 231, "Print"],
+Cell[79213, 1927, 153, 2, 21, "Print"],
+Cell[79369, 1931, 186, 5, 21, "Print"],
+Cell[79558, 1938, 231, 6, 22, "Print"],
+Cell[79792, 1946, 1604, 32, 236, "Print"],
+Cell[81399, 1980, 153, 2, 21, "Print"],
+Cell[81555, 1984, 186, 5, 21, "Print"],
+Cell[81744, 1991, 231, 6, 22, "Print"],
+Cell[81978, 1999, 1602, 32, 231, "Print"],
+Cell[83583, 2033, 153, 2, 21, "Print"],
+Cell[83739, 2037, 186, 5, 21, "Print"],
+Cell[83928, 2044, 231, 6, 22, "Print"],
+Cell[84162, 2052, 1598, 32, 231, "Print"],
+Cell[85763, 2086, 153, 2, 21, "Print"],
+Cell[85919, 2090, 186, 5, 21, "Print"],
+Cell[86108, 2097, 233, 6, 22, "Print"],
+Cell[86344, 2105, 1602, 32, 231, "Print"],
+Cell[87949, 2139, 153, 2, 21, "Print"],
+Cell[88105, 2143, 186, 5, 21, "Print"],
+Cell[88294, 2150, 231, 6, 22, "Print"],
+Cell[88528, 2158, 1595, 32, 231, "Print"],
+Cell[90126, 2192, 272, 6, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90447, 2204, 9287, 228, 1015, "Input"],
+Cell[CellGroupData[{
+Cell[99759, 2436, 153, 2, 21, "Print"],
+Cell[99915, 2440, 186, 5, 21, "Print"],
+Cell[100104, 2447, 233, 6, 22, "Print"],
+Cell[100340, 2455, 1594, 32, 231, "Print"],
+Cell[101937, 2489, 274, 6, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102260, 2501, 9333, 229, 1015, "Input"],
+Cell[CellGroupData[{
+Cell[111618, 2734, 153, 2, 21, "Print"],
+Cell[111774, 2738, 186, 5, 21, "Print"],
+Cell[111963, 2745, 231, 6, 22, "Print"],
+Cell[112197, 2753, 1590, 32, 227, "Print"],
+Cell[113790, 2787, 155, 2, 21, "Print"],
+Cell[113948, 2791, 185, 5, 21, "Print"],
+Cell[114136, 2798, 231, 6, 22, "Print"],
+Cell[114370, 2806, 1584, 32, 231, "Print"],
+Cell[115957, 2840, 155, 2, 21, "Print"],
+Cell[116115, 2844, 186, 5, 21, "Print"],
+Cell[116304, 2851, 231, 6, 22, "Print"],
+Cell[116538, 2859, 2434, 49, 227, "Print"],
+Cell[118975, 2910, 155, 2, 21, "Print"],
+Cell[119133, 2914, 186, 5, 21, "Print"],
+Cell[119322, 2921, 233, 6, 22, "Print"],
+Cell[119558, 2929, 2259, 40, 231, "Print"],
+Cell[121820, 2971, 153, 2, 21, "Print"],
+Cell[121976, 2975, 188, 5, 21, "Print"],
+Cell[122167, 2982, 231, 6, 22, "Print"],
+Cell[122401, 2990, 2318, 48, 228, "Print"],
+Cell[124722, 3040, 153, 2, 21, "Print"],
+Cell[124878, 3044, 186, 5, 21, "Print"],
+Cell[125067, 3051, 229, 6, 22, "Print"],
+Cell[125299, 3059, 2164, 39, 235, "Print"],
+Cell[127466, 3100, 153, 2, 21, "Print"],
+Cell[127622, 3104, 186, 5, 21, "Print"],
+Cell[127811, 3111, 231, 6, 22, "Print"],
+Cell[128045, 3119, 2230, 44, 230, "Print"],
+Cell[130278, 3165, 153, 2, 21, "Print"],
+Cell[130434, 3169, 186, 5, 21, "Print"],
+Cell[130623, 3176, 231, 6, 22, "Print"],
+Cell[130857, 3184, 2096, 38, 235, "Print"],
+Cell[132956, 3224, 155, 2, 21, "Print"],
+Cell[133114, 3228, 186, 5, 21, "Print"],
+Cell[133303, 3235, 233, 6, 22, "Print"],
+Cell[133539, 3243, 2133, 45, 228, "Print"],
+Cell[135675, 3290, 153, 2, 21, "Print"],
+Cell[135831, 3294, 186, 5, 21, "Print"],
+Cell[136020, 3301, 233, 6, 22, "Print"],
+Cell[136256, 3309, 2016, 36, 231, "Print"],
+Cell[138275, 3347, 153, 2, 21, "Print"],
+Cell[138431, 3351, 186, 5, 21, "Print"],
+Cell[138620, 3358, 233, 6, 22, "Print"],
+Cell[138856, 3366, 2046, 42, 229, "Print"],
+Cell[140905, 3410, 153, 2, 21, "Print"],
+Cell[141061, 3414, 186, 5, 21, "Print"],
+Cell[141250, 3421, 235, 6, 22, "Print"],
+Cell[141488, 3429, 1907, 36, 231, "Print"],
+Cell[143398, 3467, 152, 2, 21, "Print"],
+Cell[143553, 3471, 188, 5, 21, "Print"],
+Cell[143744, 3478, 233, 6, 22, "Print"],
+Cell[143980, 3486, 1917, 40, 226, "Print"],
+Cell[145900, 3528, 153, 2, 21, "Print"],
+Cell[146056, 3532, 186, 5, 21, "Print"],
+Cell[146245, 3539, 233, 6, 22, "Print"],
+Cell[146481, 3547, 1814, 34, 231, "Print"],
+Cell[148298, 3583, 155, 2, 21, "Print"],
+Cell[148456, 3587, 186, 5, 21, "Print"],
+Cell[148645, 3594, 233, 6, 22, "Print"],
+Cell[148881, 3602, 1910, 40, 225, "Print"],
+Cell[150794, 3644, 153, 2, 21, "Print"],
+Cell[150950, 3648, 186, 5, 21, "Print"],
+Cell[151139, 3655, 232, 6, 22, "Print"],
+Cell[151374, 3663, 1723, 32, 231, "Print"],
+Cell[153100, 3697, 153, 2, 21, "Print"],
+Cell[153256, 3701, 188, 5, 21, "Print"],
+Cell[153447, 3708, 233, 6, 22, "Print"],
+Cell[153683, 3716, 1822, 37, 231, "Print"],
+Cell[155508, 3755, 155, 2, 21, "Print"],
+Cell[155666, 3759, 185, 5, 21, "Print"],
+Cell[155854, 3766, 233, 6, 22, "Print"],
+Cell[156090, 3774, 1723, 32, 231, "Print"],
+Cell[157816, 3808, 155, 2, 21, "Print"],
+Cell[157974, 3812, 185, 5, 21, "Print"],
+Cell[158162, 3819, 235, 6, 22, "Print"],
+Cell[158400, 3827, 1720, 36, 225, "Print"],
+Cell[160123, 3865, 274, 6, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[160424, 3875, 69, 1, 28, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
